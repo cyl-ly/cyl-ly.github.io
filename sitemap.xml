@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cylin.cn/posts/ad0e17cd.html</loc>
+    
+    <lastmod>2023-12-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://cylin.cn/baidu_verify_codeva-1lgAX4Br0r.html</loc>
     
     <lastmod>2023-12-07</lastmod>
@@ -91,6 +100,13 @@
   
   <url>
     <loc>https://cylin.cn/categories/mysql/</loc>
+    <lastmod>2023-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://cylin.cn/categories/Hexo/</loc>
     <lastmod>2023-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
