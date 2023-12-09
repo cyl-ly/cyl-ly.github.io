@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="CYLIN‘S BLOG">
 <meta property="og:description" content="Maven&amp;MyBatis简单配置以及相应代码记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cylin.cn/image/v2-13d4251dff5e40929d9254fa49a05b4d_720w.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090902369.webp">
 <meta property="article:published_time" content="2023-12-08T14:41:00.000Z">
-<meta property="article:modified_time" content="2023-12-08T14:57:04.164Z">
+<meta property="article:modified_time" content="2023-12-09T01:03:01.193Z">
 <meta property="article:author" content="cylin">
 <meta property="article:tag" content="Maven">
 <meta property="article:tag" content="MyBatis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cylin.cn/image/v2-13d4251dff5e40929d9254fa49a05b4d_720w.webp">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090902369.webp">
   
   
   
@@ -231,7 +231,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/image/202312070946975.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090855492.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
 	
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
@@ -359,20 +359,20 @@
 </ul>
 <p><strong>标准化的项目结构：</strong></p>
 <p>Maven提供了一套标准化的项目结构，所有的IDE使用Maven构建的项目完全一样，所以IDE创建的Maven项目可以通用。如下图右边就是Maven构建的项目结构</p>
-<img src="/image/202312082057878.png" srcset="/img/loading.gif" lazyload alt="image-20210726153815028" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819267.png" srcset="/img/loading.gif" lazyload alt="image-20210726153815028" style="zoom:80%;" />
 
 
 
 <p><strong>标准化的构建流程：</strong></p>
-<img src="/image/202312081443064.png" srcset="/img/loading.gif" lazyload alt="image-20210726154144488" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819268.png" srcset="/img/loading.gif" lazyload alt="image-20210726154144488" style="zoom:80%;" />
 
 <p>如上图所示我们开发了一套系统，代码需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，而Maven提供了一套简单的命令来完成项目构建</p>
 <p><strong>依赖管理：</strong></p>
 <p>依赖管理其实就是管理你项目所依赖的第三方资源（jar包、插件）。如之前我们项目中需要使用JDBC和Druid的话，就需要去网上下载对应的依赖包，复制到项目中，还要将jar包加入工作环境这一系列的操作。如下图所示</p>
-<img src="/image/202312081443841.png" srcset="/img/loading.gif" lazyload alt="image-20210726154753631" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819269.png" srcset="/img/loading.gif" lazyload alt="image-20210726154753631" style="zoom:80%;" />
 
 <p>而Maven使用标准的 &#x3D;&#x3D;坐标&#x3D;&#x3D; 配置来管理各种依赖，只需要简单的配置就可以完成依赖管理</p>
-<img src="/image/202312081443824.png" srcset="/img/loading.gif" lazyload alt="image-20210726154922337" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819270.png" srcset="/img/loading.gif" lazyload alt="image-20210726154922337" style="zoom:80%;" />
 
 <p>如上图右边所示就是mysql驱动包的坐标，在项目中只需要写这段配置，其他都不需要我们担心，Maven都帮我们进行操作了</p>
 <h3 id="1-1-Maven简介"><a href="#1-1-Maven简介" class="headerlink" title="1.1  Maven简介"></a>1.1  Maven简介</h3><blockquote>
@@ -384,7 +384,7 @@
 <li>依赖管理模型(Dependency)</li>
 <li>插件(Plugin)</li>
 </ul>
-<img src="/image/202312081454991.png" srcset="/img/loading.gif" lazyload alt="image-20210726155759621" style="zoom: 80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819271.png" srcset="/img/loading.gif" lazyload alt="image-20210726155759621" style="zoom: 80%;" />
 
 <h4 id="1-1-2-仓库"><a href="#1-1-2-仓库" class="headerlink" title="1.1.2  仓库"></a>1.1.2  仓库</h4><p><strong>仓库分类：</strong></p>
 <ul>
@@ -405,16 +405,16 @@
 <li><p>如果没有，则去中央仓库中下载对应的jar包到本地仓库。</p>
 </li>
 </ul>
-<img src="/image/202312081531066.png" srcset="/img/loading.gif" lazyload alt="image-20210726162605394" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819272.png" srcset="/img/loading.gif" lazyload alt="image-20210726162605394" style="zoom: 50%;" />
 
 <p>如果还可以搭建远程仓库，将来jar包的查找顺序则变为：</p>
 <blockquote>
 <p>本地仓库 –&gt; 远程仓库–&gt; 中央仓库</p>
 </blockquote>
-<img src="/image/202312081531218.png" srcset="/img/loading.gif" lazyload alt="image-20210726162815045" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090819273.png" srcset="/img/loading.gif" lazyload alt="image-20210726162815045" style="zoom: 50%;" />
 
 <h4 id="1-1-3-远程仓库配置"><a href="#1-1-3-远程仓库配置" class="headerlink" title="1.1.3 远程仓库配置"></a>1.1.3 远程仓库配置</h4><p><code>F:\soft\maven\apache-maven-3.9.6\conf\settings.xml</code></p>
-<p><img src="/image/202312081613535.png" srcset="/img/loading.gif" lazyload alt="image-20231208161307499"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090821841.png" srcset="/img/loading.gif" lazyload alt="image-20231208161307499"></p>
 <p>阿里云镜像仓库</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mirror</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">id</span>&gt;</span>Nexus-aliyun<span class="hljs-tag">&lt;/<span class="hljs-name">id</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">mirrorOf</span>&gt;</span>central<span class="hljs-tag">&lt;/<span class="hljs-name">mirrorOf</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>Nexus aliyun<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">url</span>&gt;</span>https://maven.aliyun.com/repository/central<span class="hljs-tag">&lt;/<span class="hljs-name">url</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mirror</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
@@ -474,16 +474,16 @@
 <li>site ： 产生报告，发布站点等。这套声明周期一般不会使用</li>
 </ul>
 <p>同一套生命周期内，执行后边的命令，前面的所有命令会自动执行。例如默认（default）生命周期如下：</p>
-<img src="/image/202312081549843.png" srcset="/img/loading.gif" lazyload alt="image-20210726173153576" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090821124.png" srcset="/img/loading.gif" lazyload alt="image-20210726173153576" style="zoom:80%;" />
 
 <p>当我们执行 <code>install</code>（安装）命令时，它会先执行 <code>compile</code>命令，再执行 <code>test </code> 命令，再执行 <code>package</code> 命令，最后执行 <code>install</code> 命令</p>
 <p>当我们执行 <code>package</code> （打包）命令时，它会先执行 <code>compile</code> 命令，再执行 <code>test</code> 命令，最后执行 <code>package</code> 命令</p>
 <p>默认的生命周期也有对应的很多命令，其他的一般都不会使用，我们只关注常用的：</p>
-<img src="/image/202312081549480.png" srcset="/img/loading.gif" lazyload alt="image-20210726173619353" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090821507.png" srcset="/img/loading.gif" lazyload alt="image-20210726173619353" style="zoom:80%;" />
 
 
 
-<h3 id="1-4-IDEA使用Maven"><a href="#1-4-IDEA使用Maven" class="headerlink" title="1.4  IDEA使用Maven"></a>1.4  IDEA使用Maven</h3><h4 id="1-4-1-IDEA配置Maven环境"><a href="#1-4-1-IDEA配置Maven环境" class="headerlink" title="1.4.1  IDEA配置Maven环境"></a>1.4.1  IDEA配置Maven环境</h4><img src="/image/202312081553781.png" srcset="/img/loading.gif" lazyload alt="image-20231208155349327" style="zoom: 50%;" />
+<h3 id="1-4-IDEA使用Maven"><a href="#1-4-IDEA使用Maven" class="headerlink" title="1.4  IDEA使用Maven"></a>1.4  IDEA使用Maven</h3><h4 id="1-4-1-IDEA配置Maven环境"><a href="#1-4-1-IDEA配置Maven环境" class="headerlink" title="1.4.1  IDEA配置Maven环境"></a>1.4.1  IDEA配置Maven环境</h4><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090821526.png" srcset="/img/loading.gif" lazyload alt="image-20231208155349327" style="zoom: 50%;" />
 
 <h4 id="1-4-2-Maven-坐标详解"><a href="#1-4-2-Maven-坐标详解" class="headerlink" title="1.4.2  Maven 坐标详解"></a>1.4.2  Maven 坐标详解</h4><p><strong>什么是坐标？</strong></p>
 <ul>
@@ -497,7 +497,7 @@
 <li>version：定义当前项目版本号</li>
 </ul>
 <p>如下图就是使用坐标表示一个项目：</p>
-<img src="/image/202312081556433.png" srcset="/img/loading.gif" lazyload alt="image-20231208155606341" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822911.png" srcset="/img/loading.gif" lazyload alt="image-20231208155606341" style="zoom:67%;" />
 
 <blockquote>
 <p>&#x3D;&#x3D;注意&#x3D;&#x3D;</p>
@@ -506,18 +506,18 @@
 <li>我们的项目如果被其他的项目依赖时，也是需要坐标来引入的。</li>
 </ul>
 </blockquote>
-<h4 id="1-4-3-IDEA-创建-Maven项目"><a href="#1-4-3-IDEA-创建-Maven项目" class="headerlink" title="1.4.3  IDEA 创建 Maven项目"></a>1.4.3  IDEA 创建 Maven项目</h4><img src="/image/202312081559214.png" srcset="/img/loading.gif" lazyload alt="image-20231208155917118" style="zoom: 50%;" />
+<h4 id="1-4-3-IDEA-创建-Maven项目"><a href="#1-4-3-IDEA-创建-Maven项目" class="headerlink" title="1.4.3  IDEA 创建 Maven项目"></a>1.4.3  IDEA 创建 Maven项目</h4><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822767.png" srcset="/img/loading.gif" lazyload alt="image-20231208155917118" style="zoom: 50%;" />
 
 <hr>
-<img src="/image/202312081603145.png" srcset="/img/loading.gif" lazyload alt="image-20231208160310064" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822484.png" srcset="/img/loading.gif" lazyload alt="image-20231208160310064" style="zoom: 50%;" />
 
 <h4 id="1-4-4-IDEA-导入-Maven项目"><a href="#1-4-4-IDEA-导入-Maven项目" class="headerlink" title="1.4.4  IDEA 导入 Maven项目"></a>1.4.4  IDEA 导入 Maven项目</h4><ul>
 <li>复制到工作目录下</li>
 </ul>
-<img src="/image/202312081606879.png" srcset="/img/loading.gif" lazyload alt="image-20231208160625713" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822653.png" srcset="/img/loading.gif" lazyload alt="image-20231208160625713" style="zoom:50%;" />
 
 <p><strong>配置 Maven-Helper 插件</strong> </p>
-<img src="/image/202312081608423.png" srcset="/img/loading.gif" lazyload alt="image-20231208160838038" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822939.png" srcset="/img/loading.gif" lazyload alt="image-20231208160838038" style="zoom:50%;" />
 
 <h3 id="1-5-依赖管理"><a href="#1-5-依赖管理" class="headerlink" title="1.5  依赖管理"></a>1.5  依赖管理</h3><h4 id="1-5-1-使用坐标引入jar包"><a href="#1-5-1-使用坐标引入jar包" class="headerlink" title="1.5.1  使用坐标引入jar包"></a>1.5.1  使用坐标引入jar包</h4><p><strong>使用坐标引入jar包的步骤：</strong></p>
 <ul>
@@ -529,11 +529,11 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">&lt;!--    导入mysql 驱动jar包--&gt;<br>    &lt;dependencies&gt;<br>        &lt;dependency&gt;<br>            &lt;groupId&gt;mysql&lt;/groupId&gt;<br>            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;<br>            &lt;version&gt;<span class="hljs-number">8.0</span><span class="hljs-number">.28</span>&lt;/version&gt;<br>        &lt;/dependency&gt;<br>    &lt;/dependencies&gt;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>点击刷新按钮，使坐标生效。版本标红也要去刷新一下</p>
-<img src="/image/202312081626260.png" srcset="/img/loading.gif" lazyload alt="image-20231208162650177" style="zoom: 67%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822327.png" srcset="/img/loading.gif" lazyload alt="image-20231208162650177" style="zoom: 67%;" /></li>
 </ul>
 <ul>
 <li><p>自动刷新了，不需要自己点了</p>
-<img src="/image/202312081630832.png" srcset="/img/loading.gif" lazyload alt="image-20231208163014727" style="zoom:50%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822470.png" srcset="/img/loading.gif" lazyload alt="image-20231208163014727" style="zoom:50%;" /></li>
 </ul>
 <blockquote>
 <p> 注意：</p>
@@ -543,17 +543,17 @@
 </ul>
 </blockquote>
 <p><strong>快捷方式导入jar包的坐标：</strong></p>
-<img src="/image/202312081632906.png" srcset="/img/loading.gif" lazyload alt="image-20231208163210744" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822742.png" srcset="/img/loading.gif" lazyload alt="image-20231208163210744" style="zoom:67%;" />
 
 <hr>
-<img src="/image/202312081633410.png" srcset="/img/loading.gif" lazyload alt="image-20231208163328197" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822893.png" srcset="/img/loading.gif" lazyload alt="image-20231208163328197" style="zoom:50%;" />
 
 <h4 id="1-5-2-依赖范围"><a href="#1-5-2-依赖范围" class="headerlink" title="1.5.2  依赖范围"></a>1.5.2  依赖范围</h4><p>通过设置坐标的依赖范围(scope)，可以设置 对应jar包的作用范围：编译环境、测试环境、运行环境。</p>
 <p>如下图所示给 <code>junit</code> 依赖通过 <code>scope</code> 标签指定依赖的作用范围。 那么这个依赖就只能作用在测试环境，其他环境下不能使用。</p>
-<img src="/image/202312081637605.png" srcset="/img/loading.gif" lazyload alt="image-20210726194703845" style="zoom:70%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090822709.png" srcset="/img/loading.gif" lazyload alt="image-20210726194703845" style="zoom:70%;" />
 
 <p>那么 <code>scope</code> 都可以有哪些取值呢？</p>
-<img src="/image/202312081638758.png" srcset="/img/loading.gif" lazyload alt="image-20231208163836676" style="zoom: 80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823359.png" srcset="/img/loading.gif" lazyload alt="image-20231208163836676" style="zoom: 80%;" />
 
 <ul>
 <li>compile ：作用于编译环境、测试环境、运行环境</li>
@@ -589,7 +589,7 @@
 </ul>
 <p>了解了什么是Mybatis后，接下来说说以前 <code>JDBC代码</code> 的缺点以及Mybatis又是如何解决的</p>
 <h4 id="2-1-2-JDBC-缺点"><a href="#2-1-2-JDBC-缺点" class="headerlink" title="2.1.2  JDBC 缺点"></a>2.1.2  JDBC 缺点</h4><p>下面是 JDBC 代码，我们通过该代码分析都存在什么缺点：</p>
-<img src="/image/202312081732006.png" srcset="/img/loading.gif" lazyload alt="image-20210726203656847" style="zoom:70%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823797.png" srcset="/img/loading.gif" lazyload alt="image-20210726203656847" style="zoom:70%;" />
 
 <ul>
 <li><p>硬编码</p>
@@ -616,17 +616,17 @@
 <li>硬编码可以配置到&#x3D;&#x3D;配置文件&#x3D;&#x3D;</li>
 <li>操作繁琐的地方mybatis都&#x3D;&#x3D;自动完成&#x3D;&#x3D;</li>
 </ul>
-<img src="/image/202312081733936.png" srcset="/img/loading.gif" lazyload alt="image-20210726204849309" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823777.png" srcset="/img/loading.gif" lazyload alt="image-20210726204849309" style="zoom:80%;" />
 
-<h3 id="2-2-Mybatis快速入门"><a href="#2-2-Mybatis快速入门" class="headerlink" title="2.2  Mybatis快速入门"></a>2.2  Mybatis快速入门</h3><img src="/image/202312081741300.png" srcset="/img/loading.gif" lazyload alt="image-20231208174131188" style="zoom: 67%;" />
+<h3 id="2-2-Mybatis快速入门"><a href="#2-2-Mybatis快速入门" class="headerlink" title="2.2  Mybatis快速入门"></a>2.2  Mybatis快速入门</h3><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823206.png" srcset="/img/loading.gif" lazyload alt="image-20231208174131188" style="zoom: 67%;" />
 
 <p><strong>需求：查询user表中所有的数据</strong></p>
-<img src="/image/202312081743655.png" srcset="/img/loading.gif" lazyload alt="image-20231208174322566" style="zoom: 67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823914.png" srcset="/img/loading.gif" lazyload alt="image-20231208174322566" style="zoom: 67%;" />
 
 <ul>
 <li><p>创建模块，导入坐标</p>
 <p>在创建好的模块中的 pom.xml 配置文件中添加依赖的坐标</p>
-<img src="/image/202312081752299.png" srcset="/img/loading.gif" lazyload alt="image-20231208175235220" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823275.png" srcset="/img/loading.gif" lazyload alt="image-20231208175235220" style="zoom:67%;" />
 
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--mybatis 依赖--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mybatis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.5.5<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!--mysql 驱动--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>mysql<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>mysql-connector-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.1.46<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!--junit 单元测试--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.13<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><br>    <span class="hljs-comment">&lt;!-- 添加slf4j日志api --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.slf4j<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>slf4j-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.7.20<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 添加logback-classic依赖 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>ch.qos.logback<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>logback-classic<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.2.3<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-comment">&lt;!-- 添加logback-core依赖 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>ch.qos.logback<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>logback-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.2.3<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
@@ -640,7 +640,7 @@
 <ul>
 <li><p>编写 MyBatis 核心配置文件 – &gt; 替换连接信息 解决硬编码问题</p>
 <p>在模块下的 resources 目录下创建mybatis的配置文件 <code>mybatis-config.xml</code>，内容如下：</p>
-<img src="/image/202312081816860.png" srcset="/img/loading.gif" lazyload alt="image-20231208181153832" style="zoom: 67%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090823172.png" srcset="/img/loading.gif" lazyload alt="image-20231208181153832" style="zoom: 67%;" /></li>
 </ul>
 <h4 id="2-2-2-数据库-mapper配置文件"><a href="#2-2-2-数据库-mapper配置文件" class="headerlink" title="2.2.2 数据库_mapper配置文件"></a>2.2.2 数据库_mapper配置文件</h4><blockquote>
 <p>namespaces：命名空间</p>
@@ -659,7 +659,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> id;<br>    <span class="hljs-keyword">private</span> String username;<br>    <span class="hljs-keyword">private</span> String password;<br>    <span class="hljs-keyword">private</span> String gender;<br>    <span class="hljs-keyword">private</span> String addr;<br>    <br>    <span class="hljs-comment">//省略了 setter 和 getter 以及toString()</span><br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>编写 MybatisDemo 测试类</p>
-<img src="/image/202312081831436.png" srcset="/img/loading.gif" lazyload alt="image-20231208183138927" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090829948.png" srcset="/img/loading.gif" lazyload alt="image-20231208183138927" style="zoom: 50%;" />
 
 <hr>
 <img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312081829361.png" srcset="/img/loading.gif" lazyload alt="image-20231208182924987" style="zoom:67%;" /></li>
@@ -667,25 +667,25 @@
 </li>
 </ul>
 <h4 id="2-2-4-补充：解决SQL映射文件的警告提示："><a href="#2-2-4-补充：解决SQL映射文件的警告提示：" class="headerlink" title="2.2.4 补充：解决SQL映射文件的警告提示："></a>2.2.4 补充：解决SQL映射文件的警告提示：</h4><p>在入门案例映射配置文件中存在报红的情况。问题如下：</p>
-<img src="/image/202312081836230.png" srcset="/img/loading.gif" lazyload alt="image-20210726212621722" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090829458.png" srcset="/img/loading.gif" lazyload alt="image-20210726212621722" style="zoom:80%;" />
 
 <ul>
 <li>产生的原因：Idea和数据库没有建立连接，不识别表信息。但是大家一定要记住，它并不影响程序的执行</li>
 <li>解决方式：在Idea中配置MySQL数据库连接</li>
 </ul>
-<img src="/image/202312081838067.png" srcset="/img/loading.gif" lazyload alt="image-20231208183808865" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090829246.png" srcset="/img/loading.gif" lazyload alt="image-20231208183808865" style="zoom:50%;" />
 
 <hr>
-<img src="/image/202312081839851.png" srcset="/img/loading.gif" lazyload alt="image-20231208183945242" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090829009.png" srcset="/img/loading.gif" lazyload alt="image-20231208183945242" style="zoom:50%;" />
 
 <hr>
 <img src="/image/202312081842264.png" srcset="/img/loading.gif" lazyload alt="image-20231208184215030" style="zoom:50%;" />
 
 <h3 id="2-3-Mapper代理开发"><a href="#2-3-Mapper代理开发" class="headerlink" title="2.3  Mapper代理开发"></a>2.3  Mapper代理开发</h3><h4 id="2-3-1-Mapper代理开发概述"><a href="#2-3-1-Mapper代理开发概述" class="headerlink" title="2.3.1  Mapper代理开发概述"></a>2.3.1  Mapper代理开发概述</h4><p>之前我们写的代码是基本使用方式，它也存在硬编码的问题，如下：</p>
-<img src="/image/202312081843412.png" srcset="/img/loading.gif" lazyload alt="image-20210726214648112" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090829510.png" srcset="/img/loading.gif" lazyload alt="image-20210726214648112" style="zoom:80%;" />
 
 <p>这里调用 <code>selectList()</code> 方法传递的参数是映射配置文件中的 namespace.id值。这样写也不便于后期的维护。如果使用 Mapper 代理方式（如下图）则不存在硬编码问题。</p>
-<img src="/image/202312081849668.png" srcset="/img/loading.gif" lazyload alt="image-20231208184906620" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830470.png" srcset="/img/loading.gif" lazyload alt="image-20231208184906620" style="zoom:80%;" />
 
 <p>通过上面的描述可以看出 Mapper 代理方式的目的：</p>
 <ul>
@@ -703,10 +703,10 @@
 <li><ol>
 <li>定义与SQL映射文件同名的Mapper接口，并且将Mapper接口和SQL映射文件放置在同一目录下。如下图：</li>
 </ol>
-<img src="/image/image-20231208213659466.png" srcset="/img/loading.gif" lazyload alt="image-20231208213659466" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830914.png" srcset="/img/loading.gif" lazyload alt="image-20231208213659466" style="zoom:80%;" />
 
 <hr>
-<img src="/image/image-20231208213820780.png" srcset="/img/loading.gif" lazyload alt="image-20231208213820780" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830165.png" srcset="/img/loading.gif" lazyload alt="image-20231208213820780" style="zoom:80%;" />
 </li>
 <li><ol start="2">
 <li>设置SQL映射文件的namespace属性为Mapper接口全限定名</li>
@@ -716,44 +716,44 @@
 <li><ol start="3">
 <li>在 Mapper 接口中定义方法，方法名就是SQL映射文件中sql语句的id，并保持参数类型和返回值类型一致</li>
 </ol>
-<img src="/image/image-20231208215444004.png" srcset="/img/loading.gif" lazyload alt="image-20231208215444004" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830616.png" srcset="/img/loading.gif" lazyload alt="image-20231208215444004" style="zoom:67%;" />
 </li>
 <li><ol start="4">
 <li>其他需要更改地方</li>
 </ol>
-<img src="/image/image-20231208215620924.png" srcset="/img/loading.gif" lazyload alt="image-20231208215620924" style="zoom: 80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830597.png" srcset="/img/loading.gif" lazyload alt="image-20231208215620924" style="zoom: 80%;" />
 
 <hr>
-<img src="/image/image-20231208220041363.png" srcset="/img/loading.gif" lazyload alt="image-20231208220041363" style="zoom: 67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830420.png" srcset="/img/loading.gif" lazyload alt="image-20231208220041363" style="zoom: 67%;" />
 
 <hr>
-<img src="/image/image-20231208220115281.png" srcset="/img/loading.gif" lazyload alt="image-20231208220115281" style="zoom:67%;" /></li>
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830329.png" srcset="/img/loading.gif" lazyload alt="image-20231208220115281" style="zoom:67%;" /></li>
 </ul>
 <h4 id="2-3-4-Mapper包代理"><a href="#2-3-4-Mapper包代理" class="headerlink" title="2.3.4 Mapper包代理"></a>2.3.4 Mapper包代理</h4><p>如果Mapper接口名称和SQL映射文件名称相同，并在同一目录下，则可以使用包扫描的方式简化SQL映射文件的加载。也就是将核心配置文件的加载映射配置文件的配置修改为</p>
-<img src="/image/image-20231208220626219.png" srcset="/img/loading.gif" lazyload alt="image-20231208220626219" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830622.png" srcset="/img/loading.gif" lazyload alt="image-20231208220626219" style="zoom:80%;" />
 
 <h3 id="2-4-核心配置文件：mybatis-config-xml"><a href="#2-4-核心配置文件：mybatis-config-xml" class="headerlink" title="2.4  核心配置文件：mybatis-config.xml"></a>2.4  核心配置文件：mybatis-config.xml</h3><p>核心配置文件中现有的配置之前已经给大家进行了解释，而核心配置文件中还可以配置很多内容。我们可以通过查询官网看可以配置的内容</p>
-<img src="/image/image-20210726221454927.png" srcset="/img/loading.gif" lazyload alt="image-20210726221454927" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830151.png" srcset="/img/loading.gif" lazyload alt="image-20210726221454927" style="zoom:80%;" />
 
 <p>接下来我们先对里面的一些配置进行讲解</p>
 <h4 id="2-4-1-多环境配置"><a href="#2-4-1-多环境配置" class="headerlink" title="2.4.1  多环境配置&lt;environment&gt;"></a>2.4.1  多环境配置<code>&lt;environment&gt;</code></h4><p>在核心配置文件的 <code>environments</code> 标签中其实是可以配置多个 <code>environment</code> ，使用 <code>id</code> 给每段环境起名，在 <code>environments</code> 中使用 <code>default=&#39;环境id&#39;</code> 来指定使用哪儿段配置。我们一般就配置一个 <code>environment</code> 即可。</p>
-<img src="/image/image-20231208221327218.png" srcset="/img/loading.gif" lazyload alt="image-20231208221327218" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830450.png" srcset="/img/loading.gif" lazyload alt="image-20231208221327218" style="zoom:67%;" />
 
 <hr>
-<img src="/image/image-20231208221503620.png" srcset="/img/loading.gif" lazyload alt="image-20231208221503620" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830163.png" srcset="/img/loading.gif" lazyload alt="image-20231208221503620" style="zoom:80%;" />
 
 <h4 id="2-4-2-类型别名"><a href="#2-4-2-类型别名" class="headerlink" title="2.4.2  类型别名&lt;typeAliases&gt;"></a>2.4.2  类型别名<code>&lt;typeAliases&gt;</code></h4><p>在映射配置文件中的 <code>resultType</code> 属性需要配置数据封装的类型（类的全限定名）。而每次这样写是特别麻烦的，Mybatis 提供了 <code>类型别名</code>(typeAliases) 可以简化这部分的书写——单独起别名很麻烦，不如下面的包扫描</p>
-<img src="/image/image-20231208223730077.png" srcset="/img/loading.gif" lazyload alt="image-20231208223730077" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830440.png" srcset="/img/loading.gif" lazyload alt="image-20231208223730077" style="zoom:80%;" />
 
 <p>首先需要现在核心配置文件中配置类型别名，也就意味着给pojo包下所有的类起了别名（别名就是类名），不区分大小写。内容如下：</p>
-<img src="/image/image-20231208222035885.png" srcset="/img/loading.gif" lazyload alt="image-20231208222035885" style="zoom: 80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090831728.png" srcset="/img/loading.gif" lazyload alt="image-20231208222035885" style="zoom: 80%;" />
 
 <h4 id="2-4-3-注意"><a href="#2-4-3-注意" class="headerlink" title="2.4.3 注意"></a>2.4.3 注意</h4><p>配置各个标签时，需要遵守前后顺序</p>
-<img src="/image/image-20231208223912829.png" srcset="/img/loading.gif" lazyload alt="image-20231208223912829" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090831907.png" srcset="/img/loading.gif" lazyload alt="image-20231208223912829" style="zoom:80%;" />
 
 <h1 id="三、小结"><a href="#三、小结" class="headerlink" title="三、小结"></a>三、小结</h1><p>放一张整体module的结构图以便后续理解，这是使用Mapper代理后的结构图</p>
 <p>本章2.3.3 代码实现Mapper代理 对各文件内容进行讲解</p>
-<img src="/image/image-20231208222344039.png" srcset="/img/loading.gif" lazyload alt="image-20231208222344039" style="zoom:67%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090831026.png" srcset="/img/loading.gif" lazyload alt="image-20231208222344039" style="zoom:67%;" />
 
 
                 
