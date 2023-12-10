@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090902369.webp">
 <meta property="article:published_time" content="2023-12-08T14:41:00.000Z">
-<meta property="article:modified_time" content="2023-12-09T01:03:01.193Z">
+<meta property="article:modified_time" content="2023-12-09T03:30:17.778Z">
 <meta property="article:author" content="cylin">
 <meta property="article:tag" content="Maven">
 <meta property="article:tag" content="MyBatis">
@@ -261,7 +261,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.2k 字
+          7.5k 字
         
       </span>
     
@@ -272,7 +272,7 @@
         
         
         
-          61 分钟
+          63 分钟
         
       </span>
     
@@ -706,12 +706,12 @@
 <img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830914.png" srcset="/img/loading.gif" lazyload alt="image-20231208213659466" style="zoom:80%;" />
 
 <hr>
-<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830165.png" srcset="/img/loading.gif" lazyload alt="image-20231208213820780" style="zoom:80%;" />
+<img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090830165.png" srcset="/img/loading.gif" lazyload alt="image-20231208213820780"  />
 </li>
 <li><ol start="2">
 <li>设置SQL映射文件的namespace属性为Mapper接口全限定名</li>
 </ol>
-<p><img src="/image/image-20231208213958679.png" srcset="/img/loading.gif" lazyload alt="image-20231208213958679"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312091118220.png" srcset="/img/loading.gif" lazyload alt="image-20231209111850060"></p>
 </li>
 <li><ol start="3">
 <li>在 Mapper 接口中定义方法，方法名就是SQL映射文件中sql语句的id，并保持参数类型和返回值类型一致</li>
@@ -755,6 +755,28 @@
 <p>本章2.3.3 代码实现Mapper代理 对各文件内容进行讲解</p>
 <img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090831026.png" srcset="/img/loading.gif" lazyload alt="image-20231208222344039" style="zoom:67%;" />
 
+<h3 id="3-1-pojo"><a href="#3-1-pojo" class="headerlink" title="3.1 pojo"></a>3.1 pojo</h3><p>存放数据库的实体类，里面涉及到get、set、tostring等方法</p>
+<h3 id="3-2-配置文件-xml"><a href="#3-2-配置文件-xml" class="headerlink" title="3.2 配置文件.xml"></a>3.2 配置文件.xml</h3><ul>
+<li><p>mybatis.xml——resources下即可</p>
+<ul>
+<li>实体类路径下的包扫描，可以简化Mapper.xml中的resultType</li>
+<li>数据库连接环境——可多环境配置</li>
+<li>Mapper代理方式：设置同名mapper的路径</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312091123932.png" srcset="/img/loading.gif" lazyload alt="image-20231209112344122"></p>
+</li>
+<li><p>***Mapper.xml</p>
+<ul>
+<li>namespace：同名接口类的全限定名</li>
+<li><code>&lt;select id&gt;</code>sql语句唯一标识</li>
+<li>resultType：写实类名即可，代表返回类型是实体类对象</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312091125217.png" srcset="/img/loading.gif" lazyload alt="image-20231209112528029"></p>
+</li>
+<li><p>与***Mapper同名同路径的类接口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312091129730.png" srcset="/img/loading.gif" lazyload alt="image-20231209112953723"></p>
+</li>
+</ul>
 
                 
               </div>
@@ -853,6 +875,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/posts/928602d2.html" title="MyBatis-CRUD案例">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MyBatis-CRUD案例</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
