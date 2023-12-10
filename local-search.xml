@@ -4,6 +4,131 @@
   
   
   <entry>
+    <title>《力扣面试150题》题单拓展——位运算</title>
+    <link href="/posts/14b35ba0.html"/>
+    <url>/posts/14b35ba0.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="《力扣面试150题》题单拓展——位运算"><a href="#《力扣面试150题》题单拓展——位运算" class="headerlink" title="《力扣面试150题》题单拓展——位运算"></a>《力扣面试150题》题单拓展——位运算</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><table><thead><tr><th>运算</th><th>符号</th><th>解读</th></tr></thead><tbody><tr><td>并集</td><td>|</td><td>ans &#x3D; ans |4;<br />(1000 ∪ 0010) &#x3D; 1010</td></tr><tr><td>交集</td><td>&amp;</td><td>按位求交集</td></tr><tr><td>移位</td><td>&lt;&lt;左移</td><td>1&lt;&lt;1 &#x3D; 10(2进制)<br />int m &#x3D; l+((r-l)&gt;&gt;1);    二分法常用</td></tr></tbody></table><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++">count = num&gt;&gt;i &amp; <span class="hljs-number">1</span>;    <span class="hljs-comment">//右移i位，并和1与，得到的是i位上面是否是1</span><br><span class="hljs-type">int</span> len = <span class="hljs-number">32</span>-__builtin_clz(s);<span class="hljs-comment">//二进制的长度</span><br><br><span class="hljs-comment">//a ^ b = new_ans  -&gt;  b = a ^ new_ans</span><br><br><span class="hljs-comment">//反转，可以用异或的方式 0 ^ 1 = 1, 1 ^ 1 = 0 </span><br></code></pre></td></tr></table></figure><h2 id="2-判断某位是否1"><a href="#2-判断某位是否1" class="headerlink" title="2.判断某位是否1"></a>2.判断某位是否1</h2><blockquote><p><a href="https://leetcode.cn/problems/single-number-ii/description/?envType=study-plan-v2&envId=top-interview-150">137.只出现一次的数字II</a></p><p>统计每位上面1的个数，模3，按所统计的位并集起来</p><hr><p><a href="https://leetcode.cn/problems/number-of-1-bits/description/?envType=study-plan-v2&envId=top-interview-150">191.位1的个数</a></p><p>先统计位数，然后n&gt;&gt;i &amp;1 就可以了</p><hr><p><a href="https://leetcode.cn/problems/reverse-bits/description/?envType=study-plan-v2&envId=top-interview-150">190.颠倒二进制位</a></p><p>先统计，再移位放回</p></blockquote><h2 id="3"><a href="#3" class="headerlink" title="3.&amp;"></a>3.&amp;</h2><blockquote><p><a href="https://leetcode.cn/problems/bitwise-and-of-numbers-range/description/?envType=study-plan-v2&envId=top-interview-150">201.数字范围按位与</a></p><p>n 和 n+1 与后，某一位开始的后面都会被置为0，只有前面的公共前缀会被保留下来，找到即可</p></blockquote><h2 id="4-按位遍历运算"><a href="#4-按位遍历运算" class="headerlink" title="4.按位遍历运算"></a>4.按位遍历运算</h2><blockquote><p><a href="https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/description/">421.数组中两个数的最大异或值</a></p><p>两数之和的异或版本，叠加了 ^ |</p><hr><p><a href="https://leetcode.cn/problems/maximum-strong-pair-xor-ii/description/">2935.找出强数对的最大异或值II</a>  难度分：2349</p><p>同上，不过多了附加条件</p></blockquote><h2 id="5-递归"><a href="#5-递归" class="headerlink" title="5.递归"></a>5.递归</h2><blockquote><p><a href="https://leetcode.cn/problems/k-th-symbol-in-grammar/description/">779.第K个语法符号</a>  难度分：1571</p><p>用到了异或反转</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《力扣面试150题》题单拓展——双指针</title>
+    <link href="/posts/87778557.html"/>
+    <url>/posts/87778557.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="《力扣面试150题》题单拓展——双指针"><a href="#《力扣面试150题》题单拓展——双指针" class="headerlink" title="《力扣面试150题》题单拓展——双指针"></a>《力扣面试150题》题单拓展——双指针</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><blockquote><p><strong>为什么双指针会正确？不会漏掉搜索空间</strong></p></blockquote><ol><li>数组<code>nums</code>递增排序，假设共8个元素</li><li>假设由于搜索空间<code>i &lt; j</code>的限制，只搜索右上角白色倒三角空间，一开始，我们检查右上方单元格<code>(0,7)</code>，即计算<code>A[0] + A[7]</code>，与 <code>target </code>进行比较。如果不相等的话，则要么大于<code> target</code>，要么小于<code> target</code></li></ol><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102020817.png" alt="image-20231210202000661"></p><ol start="3"><li>假设此时 <code>A[0] + A[7] </code>小于<code> target</code>。这时候，我们应该去找和更大的两个数。由于 <code>A[7] </code>已经是最大的数了，其他的数跟<code>A[0]</code>相加，和只会更小。也就是说 <code>A[0] + A[6] 、A[0] + A[5]、……、A[0] + A[1] </code>也都小于<code> target</code>，这些都是不合要求的解，可以一次排除。这相当于<code>i=0 </code>的情况全部被排除。对应用双指针解法的代码，就是<code> i++</code>，对应于搜索空间，就是削减了一行的搜索空间，如下图所示。</li></ol><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102012862.png" alt="削减空间"></p><ol start="4"><li>假设此时 <code>A[1] + A[7]</code>大于 <code>target</code>。这时候，我们应该去找 和更小的两个数。由于 <code>A[1] </code>已经是当前搜索空间最小的数了，其他的数跟 <code>A[7] </code>相加的话，和只会更大。也就是说 <code>A[1] + A[7] 、A[2] + A[7]、……、A[6] + A[7] </code>也都大于<code> target</code>，这些都是不合要求的解，可以一次排除。这相当于<code> j=7</code> 的情况全部被排除。对应用双指针解法的代码，就是<code> j--</code>，对应于搜索空间，就是削减了一列的搜索空间，如下图所示</li></ol><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102020304.png" alt="image-20231210202017247"></p><h2 id="2-缩减空间"><a href="#2-缩减空间" class="headerlink" title="2.缩减空间"></a>2.缩减空间</h2><blockquote><p><a href="https://leetcode.cn/problems/search-a-2d-matrix-ii/description/">240.搜索二维矩阵II</a></p><p>同样右上角开始，一列 &#x2F; 一行的缩减空间</p><hr><p><a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/?envType=study-plan-v2&envId=top-interview-150">167.两数之和II-输入有序数组</a></p><p>基础知识图示例题</p><hr><p><a href="https://leetcode.cn/problems/container-with-most-water/description/">11.盛最多水的容器</a></p><p>之前一直还蒙，缩减空间后，豁然开朗</p><hr><p><a href="https://leetcode.cn/problems/search-a-2d-matrix/description/">74.搜索二维矩阵</a></p><p>可以缩减空间，也可以去二分查找，先找到目标行就可以</p></blockquote><h2 id="3-双指针延伸"><a href="#3-双指针延伸" class="headerlink" title="3.双指针延伸"></a>3.双指针延伸</h2><blockquote><p><a href="https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-interview-150">15.三数之和</a></p><p><code>i l r </code>三个指针的去重思想很棒，值得反复打磨</p><hr><p><a href="https://leetcode.cn/problems/valid-triangle-number/description/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china">611.有效三角形的个数</a></p><p>固定哪个指针真的很有趣，一旦是最左边的，肯定做不出来</p><hr><p><a href="https://leetcode.cn/problems/4sum/description/">18.四数之和</a></p><p>固定前两个指针，转为了“三数之和”，可以借鉴三数之和的去重思路，注意<code>j-i&gt;1</code>就是把<code>j</code>和<code>i</code>前面的隔出来，才能去重，不然本轮<code>j</code>的去重会和上轮的<code>i</code>重叠</p></blockquote><h2 id="4-常规扫描"><a href="#4-常规扫描" class="headerlink" title="4.常规扫描"></a>4.常规扫描</h2><blockquote><p><a href="https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/description/">2824.统计和小于目标的下标对数目</a>  难度分：1166</p><p>常规双指针扫描了，收集个数</p><hr><p><a href="https://leetcode.cn/problems/3sum-closest/description/">16.最接近的三数之和</a></p><p>两个条件分别控制<code>l r</code>指针，常规</p><hr><p><a href="https://leetcode.cn/problems/trapping-rain-water/description/">42.接雨水</a></p><p>找到前后max的min，就能计算当前可以存下的水，可以借助辅助的数组空间和纯正的双指针</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《力扣面试150题》题单拓展——回溯</title>
+    <link href="/posts/6ebace6f.html"/>
+    <url>/posts/6ebace6f.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="《力扣面试150题》题单拓展——回溯"><a href="#《力扣面试150题》题单拓展——回溯" class="headerlink" title="《力扣面试150题》题单拓展——回溯"></a>《力扣面试150题》题单拓展——回溯</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">find</span><span class="hljs-params">(string &amp;s, <span class="hljs-type">int</span> i, string &amp;path)</span></span>&#123;<br>    <span class="hljs-comment">//终止条件</span><br><span class="hljs-keyword">if</span>(i == s.<span class="hljs-built_in">size</span>())&#123;<br>        ans.<span class="hljs-built_in">push_back</span>(path);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=<span class="hljs-number">0</span>; k&lt;index[sub].<span class="hljs-built_in">size</span>(); k++)&#123;     <span class="hljs-comment">//处理一层</span><br>        path.<span class="hljs-built_in">push_back</span>(index[sub][k]);<br>        <span class="hljs-built_in">find</span>(s, i+<span class="hljs-number">1</span>, path);<span class="hljs-comment">//递归</span><br>        path.<span class="hljs-built_in">pop_back</span>();<span class="hljs-comment">//回溯的关键</span><br>    &#125;<br>&#125;<br><span class="hljs-comment">//本层的循环处理一层，递归去处理下一层</span><br></code></pre></td></tr></table></figure><h2 id="2-标准回溯"><a href="#2-标准回溯" class="headerlink" title="2.标准回溯"></a>2.标准回溯</h2><blockquote><p><a href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/?envType=study-plan-v2&envId=top-interview-150">17.电话号码的字母组合</a></p><p>很标注规范的回溯</p><hr><p><a href="https://leetcode.cn/problems/combination-sum/description/">39.组合总和</a></p><p>每个数字都可以重复用，所以每层递归并不一定都会向下走一位，而是原地位进去，sum是返回条件</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> index=i; index&lt;<span class="hljs-number">9</span>; index++)&#123;<br> <span class="hljs-keyword">if</span>(sum+nums[index] &lt;= n)<span class="hljs-comment">//剪枝</span><br>     <span class="hljs-built_in">find</span>(index, ...);<br></code></pre></td></tr></table></figure><hr><p><a href="https://leetcode.cn/problems/combinations/">77.组合</a></p><p>把第一层函数当做一层展开，就是用for循环，展开一层遍历，用递归去向下延伸</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> index=i; index&lt;nums.<span class="hljs-built_in">size</span>(); index++)<br></code></pre></td></tr></table></figure><p>这里的终止条件时path收集到了几位</p><hr><p><a href="https://leetcode.cn/problems/subsets/description/">78.子集</a></p><p>当前位要或者不要，这里就没有for循环了，因为直接就可以分为两种情况进行展开了</p><hr><p><a href="https://leetcode.cn/problems/letter-case-permutation/description/">784.字母大小写全排列</a>  难度分：1342</p><p>分字母和数字进行判断改不改写，怎么递归，常规</p></blockquote><h2 id="3-特殊去重"><a href="#3-特殊去重" class="headerlink" title="3.特殊去重"></a>3.特殊去重</h2><blockquote><p><a href="https://leetcode.cn/problems/combination-sum-ii/description/">40.组合总和II</a></p><p>终止条件有sum控制，结果集长度不一定相同</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">if</span>(j-i&gt;<span class="hljs-number">0</span> &amp;&amp; nums[j] == nums[j<span class="hljs-number">-1</span>])       <br><span class="hljs-comment">//j-i&gt;0 保证了不会和上一层的重复，而且去重的还是本层的   去重本层，但不去重递归的深层</span><br><span class="hljs-keyword">continue</span>;<br></code></pre></td></tr></table></figure><hr><p><a href="https://leetcode.cn/problems/combination-sum-iii/">216.组合总和III</a></p><p>终止条件有sum和len控制</p><p>剪枝+下一位的位数</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> index=i; index&lt;<span class="hljs-number">9</span>; index++)&#123;<br> <span class="hljs-keyword">if</span>(sum+nums[index] &lt;= n)&#123;<br>     path.<span class="hljs-built_in">push_back</span>(nums[index]);<br>     <span class="hljs-built_in">find</span>(index+<span class="hljs-number">1</span>, n, k, path, len+<span class="hljs-number">1</span>, sum+nums[index]);<span class="hljs-comment">//递归进入当前遍历位的下一位</span><br>     path.<span class="hljs-built_in">pop_back</span>();<br> &#125;<br>&#125;<br></code></pre></td></tr></table></figure><hr><p><a href="https://leetcode.cn/problems/combination-sum-iv/description/">377.组合总和IV</a></p><p><strong>回溯法翻车了！！！！</strong></p><p>优秀评论：转为爬楼梯的问题，每次爬的层数是从nums里面选出来的，太秀了</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=target; i++)&#123;<br> <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> num:nums)&#123;<br>     <span class="hljs-keyword">if</span>(i &gt;= num)<br>         dp[i] += (<span class="hljs-type">long</span> <span class="hljs-type">long</span>)dp[i-num];<br> &#125;<br>&#125;<br></code></pre></td></tr></table></figure><hr><p><a href="https://leetcode.cn/problems/permutations/description/?envType=study-plan-v2&envId=top-interview-150">46.全排列</a></p><p>不重复数组，借助辅助数组来表示是否加入到path中，回溯即可</p><hr><p><a href="https://leetcode.cn/problems/permutations-ii/description/">47.全排列II</a>  </p><p>全排列，从没选过的里面选一个，结果集长度一定一样，所以终止条件用len判断，去重用bool来判断</p><p>回溯时的剪枝很优秀，相比如让每个元素都来i位，更好理解</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 1 1 2 现在需要剪枝同一层的第二个1收集的答案</span><br><span class="hljs-comment">//当第一个1没有被使用的时候，遍历到第二个1，一定要去重</span><br><span class="hljs-comment">//如果第一个1现在已经被使用了，那么就可以不再去重，第二个1可以继续使用</span><br><br><span class="hljs-keyword">if</span>(flag[i] == <span class="hljs-literal">false</span>)<br> <span class="hljs-keyword">if</span>(i&gt;<span class="hljs-number">0</span> &amp;&amp; nums[i]==nums[i<span class="hljs-number">-1</span>] &amp;&amp; flag[i<span class="hljs-number">-1</span>] == <span class="hljs-number">0</span>)    <span class="hljs-comment">//这样可以避免子层的剪枝</span><br></code></pre></td></tr></table></figure><hr><p><a href="https://leetcode.cn/problems/subsets-ii/description/">90.子集II</a>  </p><p>这个题值得特殊对待，<strong>挑选构成组合问题，不是排列</strong>并且没有sum来当做终止条件</p><p>因为没有终止条件，每次进入递归都会保存，所以不要把他想象成第i位取不取，而是看做一个集合，从集合里面取不取这个数字加入到结果集合中</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">find</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp;nums, <span class="hljs-type">int</span> i, vector&lt;<span class="hljs-type">int</span>&gt;&amp;path)</span></span>&#123;<br> ans.<span class="hljs-built_in">push_back</span>(path);        <span class="hljs-comment">//这里相当于不要i位，直接先保存</span><br><br> <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=i; k&lt;nums.<span class="hljs-built_in">size</span>(); k++)&#123;<span class="hljs-comment">//这里就是带挑选的集合</span><br>     <span class="hljs-keyword">if</span>(k&gt;i &amp;&amp; nums[k]==nums[k<span class="hljs-number">-1</span>])       <br>         <span class="hljs-keyword">continue</span>;<br>     path.<span class="hljs-built_in">push_back</span>(nums[k]);            <span class="hljs-comment">//这里为要k位，</span><br>     <span class="hljs-built_in">find</span>(nums, k+<span class="hljs-number">1</span>, path);<br>     path.<span class="hljs-built_in">pop_back</span>();<br> &#125;<br>&#125;<br></code></pre></td></tr></table></figure><hr><p><a href="https://leetcode.cn/problems/generate-parentheses/description/?envType=study-plan-v2&envId=top-interview-150">22.括号生成</a></p><p>根据左右括号的数量，去确定是否参与递归，这题自己思路完美！！</p><p>那评论区都在噶什么，那么多动态规划</p><hr><p><a href="https://leetcode.cn/problems/word-search/description/?envType=study-plan-v2&envId=top-interview-150">79.单词搜索</a></p><p>一种是在入口之前进行去重，不匹配就不让进行递归，这种代码比较繁琐，而且应该始终都会多递归一层</p><p>还有一种思路是在递归刚进来，处理各种异常return   这种代码简短</p></blockquote><h2 id="4-特例"><a href="#4-特例" class="headerlink" title="4.特例"></a>4.特例</h2><blockquote><p><a href="https://leetcode.cn/problems/permutation-sequence/description/">60.排列序列</a></p><p>数学方法更优秀，通过确定首位数字后面一个有多少种可能，来确定首位的数字，以此类推</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《力扣面试150题》题单拓展——滑动窗口</title>
+    <link href="/posts/1a814453.html"/>
+    <url>/posts/1a814453.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="《力扣面试150题》题单拓展——滑动窗口"><a href="#《力扣面试150题》题单拓展——滑动窗口" class="headerlink" title="《力扣面试150题》题单拓展——滑动窗口"></a>《力扣面试150题》题单拓展——滑动窗口</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><blockquote><p>先区分好，枚举右端点，还是左端点，</p><p>窗口内的条件改变后，一般都是while控制另一个窗口的移动，然后收集结算</p><p>我感觉滑动窗口这里变动最大的，什么时候去滑动左窗口，什么时候去收集答案，都很不一样，得慢慢体会</p><p>滑动窗口难题是真的难，呜呜呜呜枯了</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//把char转为int  0~255</span><br><span class="hljs-comment">//可以直接vector[string[2]]++;</span><br></code></pre></td></tr></table></figure><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findSubArray</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span></span>&#123;<br>    <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> r=<span class="hljs-number">0</span>; r&lt;n; r++)&#123;<br>        sum += nums[r];<span class="hljs-comment">//增加当前右边指针的数字/字符的求和/计数</span><br>        <span class="hljs-keyword">while</span>([l, r]不符合题意)&#123;<span class="hljs-comment">//就是什么时候刚刚开始可以缩进左窗口</span><br>            sum -= nums[l];<br>            l++;<br>        &#125;<br>        <span class="hljs-comment">//需要判断结算是否需要条件</span><br>        ans = <span class="hljs-built_in">max</span>(ans, r-l+<span class="hljs-number">1</span>);<span class="hljs-comment">//结算</span><br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="2-常规窗口"><a href="#2-常规窗口" class="headerlink" title="2.常规窗口"></a>2.常规窗口</h2><blockquote><p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/description/">209.长度最小的子数组</a></p><p>枚举右端点，更新<code>sum</code>后，满足条件时，缩进左窗口，结算</p><hr><p><a href="https://leetcode.cn/problems/subarray-product-less-than-k/description/">713.乘积小于K的子数组</a></p><p>更新<code>mul</code>后，立即判断左窗口的移动，结算</p><p>这里结算也需要条件，因为可能是因为窗口l &gt;r 导致的缩进左窗口退出循环</p><hr><p><a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/">3.无重复字符的最长子串</a>  思想</p><p>1.进新来字符后，先<code>while</code>判断怎么移动左窗口，然后收集，借助了<code>set</code></p><p>什么时候缩进左窗口：当新建来的集合里面已经可以找到的时候，刚进来就可以结算，所以不在条件里面</p><p>2.跳动窗口，左窗口一直更新为<code>max(s[r]上次出现的位置+1，l)</code>，利用了这种特性来进行了窗口内的去重</p></blockquote><h2 id="3-转变窗口内的统计"><a href="#3-转变窗口内的统计" class="headerlink" title="3.转变窗口内的统计"></a>3.转变窗口内的统计</h2><blockquote><p><a href="https://leetcode.cn/problems/max-consecutive-ones-iii/description/">1004.最大连续1的个数III</a>  难度分：1656</p><p>把1的个数，转变为统计窗口内0的个数，绝杀啊</p><p>什么时候开始缩进左窗口：窗口内0的个数 &gt; k的时候，缩进外面结算，因为刚进来也会满足条件，所以结算可以不放在条件里面</p><hr><p><a href="https://leetcode.cn/problems/minimum-window-substring/description/?envType=study-plan-v2&envId=top-interview-150">76.最小覆盖子串</a></p><p>把窗口内的要求转存为了一张数组，满足要求时缩进左窗口，很细</p><p>这个题是什么时候开始缩进左窗口：标记刚还清账本的时候开始缩进，去掉左边无关紧要的字符，缩进完毕就可以结算了（因为不是一进来就会满足，所以结算要放在<code>if()</code>里面）</p><hr><p><a href="https://leetcode.cn/problems/sliding-window-maximum/description/">239.滑动窗口最大值</a></p><p>和单调队列进行结合，维护窗口大小的队列，入队，弹出，结算，</p></blockquote><h2 id="4-上难度"><a href="#4-上难度" class="headerlink" title="4.上难度"></a>4.上难度</h2><blockquote><p><a href="https://leetcode.cn/problems/replace-the-substring-for-balanced-string/?envType=list&envId=lAeASc0d">1234.替换子串得到平衡字符串</a>  难度分：1878</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>《力扣面试150题》题单拓展——二分法</title>
+    <link href="/posts/724c4101.html"/>
+    <url>/posts/724c4101.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="《力扣面试150题》题单拓展——二分法"><a href="#《力扣面试150题》题单拓展——二分法" class="headerlink" title="《力扣面试150题》题单拓展——二分法"></a>《力扣面试150题》题单拓展——二分法</h1><blockquote><p>困难题：找第K大&#x2F;小</p><p>最大化最小值</p></blockquote><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1. 基础知识"></a>1. 基础知识</h2><blockquote><p>首先可以确定答案的上下界</p><p>单调性分析：如果当前答案为m时，可以满足，一定有一侧是一定满足的，另一侧不一定，需要去探索</p></blockquote><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">is_ok</span><span class="hljs-params">()</span></span>&#123;<br>    <br>&#125;<br><br><span class="hljs-type">int</span> l, r;<br><span class="hljs-type">int</span> ans;<br><span class="hljs-keyword">while</span>(l &lt;= r)&#123;<br>    <span class="hljs-type">int</span> m = l+((r-l)&gt;&gt;<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">is_ok</span>())&#123;<br>        ans = m;<br>        r = m<span class="hljs-number">-1</span>;<span class="hljs-comment">//根据情况而定</span><br>    &#125;<br>    <span class="hljs-keyword">else</span><br>        l = m+<span class="hljs-number">1</span>;<br>&#125;<br><span class="hljs-keyword">return</span> ans;<br></code></pre></td></tr></table></figure><h2 id="2-is-ok"><a href="#2-is-ok" class="headerlink" title="2.  is_ok()"></a>2.  is_ok()</h2><blockquote><p>我认为对于不同的题，整体主函数都是一样的，唯一的难点就是怎么去更好更快的判断出当前答案m是否满足要求，定制此函数才是最难的</p></blockquote><h3 id="a-简单线性扫描"><a href="#a-简单线性扫描" class="headerlink" title="a.简单线性扫描"></a>a.简单线性扫描</h3><blockquote><p><a href="https://leetcode.cn/problems/koko-eating-bananas/description/">875.爱吃香蕉的珂珂</a>  难度分：1766</p><p>判断在m速度下，吃完所有香蕉需要的时间是否小于期限h小时</p><p>a&#x2F;b 向上取整：(a+b-1)&#x2F;b</p><hr><p><a href="https://leetcode.cn/problems/find-the-smallest-divisor-given-a-threshold/description/">1283.使结果不超过阈值的最小除数</a>  难度分：1542</p><p>判断除数之和是否 &lt;&#x3D; threshold即可，还用到了向上取整，嘿嘿嘿</p><hr><p><a href="https://leetcode.cn/problems/minimum-time-to-complete-trips/description/">2187.完成旅途的最少时间</a>  难度分：1641</p><p>同样是除数之和，不过是向下取整</p><hr><p><a href="https://leetcode.cn/problems/maximum-candies-allocated-to-k-children/description/">2226.每个小孩最多能分到多少糖果</a>  难度分：1646</p><p>同上</p><hr><p><a href="https://leetcode.cn/problems/minimum-speed-to-arrive-on-time/description/">1870.准时到达的列车最小时速</a>  难度分：1676</p><p>只需要注意一下最后一个数据的处理就可以了</p><hr><p><a href="https://leetcode.cn/problems/minimum-limit-of-balls-in-a-bag/description/">1760.袋子里最少数目的球</a>  难度分：1940</p><p>可以根据最大化最小值 or 最小化最大值 去确定满足时候的转移条件</p><hr><p><a href="https://leetcode.cn/problems/minimized-maximum-of-products-distributed-to-any-store/description/">2064.分配给商店的最多商品的最小值</a>  难度分：1886</p><p>最小化最大值——这个的保存结果和is_ok()很有意思</p><hr><p><a href="https://leetcode.cn/problems/h-index-ii/description/?envType=list&envId=AdnHJJBG">275.H指数II</a></p><p>简单扫描一遍</p></blockquote><h3 id="b-带有历史标记的线性扫描"><a href="#b-带有历史标记的线性扫描" class="headerlink" title="b.带有历史标记的线性扫描"></a>b.带有历史标记的线性扫描</h3><blockquote><p><a href="https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/description/">1011.在D天内送达包裹的能力</a>  难度分：1725</p><p>运送满足的连续段，注意单体不符合的return点</p><hr><p><a href="https://leetcode.cn/problems/minimum-number-of-days-to-make-m-bouquets/description/">1482.制作m束花所需的最少天数</a>  难度分：1946</p><hr><p><a href="https://leetcode.cn/problems/magnetic-force-between-two-balls/description/">1552.两球之间的磁力</a>  难度分：1920</p><p>注意是否需要排序，最大化确定转移方向</p><hr><p><a href="https://leetcode.cn/problems/furthest-building-you-can-reach/description/">1642.可以到达的最远建筑</a>  难度分：1962</p><p>*标记未做</p><hr><p><a href="https://leetcode.cn/problems/find-k-th-smallest-pair-distance/description/?envType=list&envId=AdnHJJBG">719.找出第K小的数对距离</a></p><p>也算是分组循环了，找到一组末尾，一起统计数字</p><hr><p><a href="https://leetcode.cn/problems/maximum-running-time-of-n-computers/description/?envType=list&envId=AdnHJJBG">2141.同时运行N台电脑的最长时间</a>  难度分：2265</p><p>碎电池的转换，已经整块电池的维护</p></blockquote><h3 id="c-滑动窗口"><a href="#c-滑动窗口" class="headerlink" title="c.滑动窗口"></a>c.滑动窗口</h3><blockquote><p><a href="https://leetcode.cn/problems/xiao-zhang-shua-ti-ji-hua/description/">LCP 12.小张刷题计划</a></p><p>去掉max的窗口内是否满足要求，也是找段</p><hr><p><a href="https://leetcode.cn/problems/split-array-largest-sum/description/">410.分割数组的最大值</a></p><p>感觉也可以叫做历史的线性线性扫描</p></blockquote><h3 id="d-规律计算"><a href="#d-规律计算" class="headerlink" title="d.规律计算"></a>d.规律计算</h3><blockquote><p><a href="https://leetcode.cn/problems/minimum-garden-perimeter-to-collect-enough-apples/description/">1954.收集足够苹果的最小花园周长</a>  难度分：1759</p><p>总结找公式</p><hr><p><a href="https://leetcode.cn/problems/maximum-value-at-a-given-index-in-a-bounded-array/description/">1802.有界数组中指定下标处的额最大值</a>  难度分：1929</p><p>将求和推导公式化</p><hr><p><a href="https://leetcode.cn/problems/kth-smallest-number-in-multiplication-table/description/?envType=li">668.乘法表中的第k小的数</a></p><p>查询乘法表时，按照每行去统计数字，每行之间都有规律</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>MyBatis-CRUD案例</title>
     <link href="/posts/928602d2.html"/>
     <url>/posts/928602d2.html</url>
@@ -78,9 +203,9 @@
     
     <tags>
       
-      <tag>Java</tag>
-      
       <tag>JDBC</tag>
+      
+      <tag>Java</tag>
       
     </tags>
     
