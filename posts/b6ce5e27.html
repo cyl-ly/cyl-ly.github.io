@@ -18,24 +18,24 @@
   <meta name="author" content="cylin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="《力扣面试150题》题单拓展——位运算">
+    <meta name="description" content="《linux内核设计的艺术》思考题1.0，仅作为UCAS-杨力祥老师考试科目复习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《力扣面试150题》题单拓展——位运算">
-<meta property="og:url" content="https://cylin.cn/posts/14b35ba0.html">
+<meta property="og:title" content="OS思考题1.0">
+<meta property="og:url" content="https://cylin.cn/posts/b6ce5e27.html">
 <meta property="og:site_name" content="CYLIN‘S BLOG">
-<meta property="og:description" content="《力扣面试150题》题单拓展——位运算">
+<meta property="og:description" content="《linux内核设计的艺术》思考题1.0，仅作为UCAS-杨力祥老师考试科目复习">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102008207.webp">
-<meta property="article:published_time" content="2023-12-10T12:03:57.000Z">
-<meta property="article:modified_time" content="2023-12-10T12:18:33.422Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102144266.webp">
+<meta property="article:published_time" content="2023-12-10T13:42:12.000Z">
+<meta property="article:modified_time" content="2023-12-10T14:41:06.499Z">
 <meta property="article:author" content="cylin">
-<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="HomeWork">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102008207.webp">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102144266.webp">
   
   
   
-  <title>《力扣面试150题》题单拓展——位运算 - CYLIN‘S BLOG</title>
+  <title>OS思考题1.0 - CYLIN‘S BLOG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -237,7 +237,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="《力扣面试150题》题单拓展——位运算"></span>
+            <span id="subtitle" data-typed-text="OS思考题1.0"></span>
           
         </div>
 
@@ -248,7 +248,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-10 20:03" pubdate>
+        <time datetime="2023-12-10 21:42" pubdate>
           2023年12月10日 晚上
         </time>
       </span>
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          564 字
+          2.1k 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          5 分钟
+          18 分钟
         
       </span>
     
@@ -334,64 +334,77 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">《力扣面试150题》题单拓展——位运算</h1>
+            <h1 id="seo-header">OS思考题1.0</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="《力扣面试150题》题单拓展——位运算"><a href="#《力扣面试150题》题单拓展——位运算" class="headerlink" title="《力扣面试150题》题单拓展——位运算"></a>《力扣面试150题》题单拓展——位运算</h1><h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1.基础知识"></a>1.基础知识</h2><table>
-<thead>
-<tr>
-<th>运算</th>
-<th>符号</th>
-<th>解读</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>并集</td>
-<td>|</td>
-<td>ans &#x3D; ans |4;<br />(1000 ∪ 0010) &#x3D; 1010</td>
-</tr>
-<tr>
-<td>交集</td>
-<td>&amp;</td>
-<td>按位求交集</td>
-</tr>
-<tr>
-<td>移位</td>
-<td>&lt;&lt;左移</td>
-<td>1&lt;&lt;1 &#x3D; 10(2进制)<br />int m &#x3D; l+((r-l)&gt;&gt;1);    二分法常用</td>
-</tr>
-</tbody></table>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++">count = num&gt;&gt;i &amp; <span class="hljs-number">1</span>;    <span class="hljs-comment">//右移i位，并和1与，得到的是i位上面是否是1</span><br><span class="hljs-type">int</span> len = <span class="hljs-number">32</span>-__builtin_clz(s);		<span class="hljs-comment">//二进制的长度</span><br><br><span class="hljs-comment">//a ^ b = new_ans  -&gt;  b = a ^ new_ans</span><br><br><span class="hljs-comment">//反转，可以用异或的方式 0 ^ 1 = 1, 1 ^ 1 = 0 </span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-判断某位是否1"><a href="#2-判断某位是否1" class="headerlink" title="2.判断某位是否1"></a>2.判断某位是否1</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number-ii/description/?envType=study-plan-v2&envId=top-interview-150">137.只出现一次的数字II</a></p>
-<p>统计每位上面1的个数，模3，按所统计的位并集起来</p>
-<hr>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-1-bits/description/?envType=study-plan-v2&envId=top-interview-150">191.位1的个数</a></p>
-<p>先统计位数，然后n&gt;&gt;i &amp;1 就可以了</p>
-<hr>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-bits/description/?envType=study-plan-v2&envId=top-interview-150">190.颠倒二进制位</a></p>
-<p>先统计，再移位放回</p>
+                <h1 id="《linux内核设计的艺术》思考题1-0"><a href="#《linux内核设计的艺术》思考题1-0" class="headerlink" title="《linux内核设计的艺术》思考题1.0"></a>《linux内核设计的艺术》思考题1.0</h1><blockquote>
+<p>仅作为UCAS-杨力祥老师考试科目复习</p>
+<p>查阅参考，结合书本与个人理解，简化表达</p>
 </blockquote>
-<h2 id="3"><a href="#3" class="headerlink" title="3.&amp;"></a>3.&amp;</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/bitwise-and-of-numbers-range/description/?envType=study-plan-v2&envId=top-interview-150">201.数字范围按位与</a></p>
-<p>n 和 n+1 与后，某一位开始的后面都会被置为0，只有前面的公共前缀会被保留下来，找到即可</p>
+<ol>
+<li><p>为什么开始启动计算机的时候，执行的是<code>BIOS</code>代码而不是操作系统自身的代码？</p>
+<blockquote>
+<p>最开始启动计算机的时候，内存未初始化，没有任何程序。<br>因为CPU只能读取内存中的程序，所以必须将操作系统代码先加载进内存当中——这一过程就需要BIOS来完成<br>将操作系统的引导扇区加载到0x07C00处<br>所以为了让os启动，计算机启动最开始运行的是BIOS代码</p>
 </blockquote>
-<h2 id="4-按位遍历运算"><a href="#4-按位遍历运算" class="headerlink" title="4.按位遍历运算"></a>4.按位遍历运算</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/description/">421.数组中两个数的最大异或值</a></p>
-<p>两数之和的异或版本，叠加了 ^ |</p>
-<hr>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-strong-pair-xor-ii/description/">2935.找出强数对的最大异或值II</a>  难度分：2349</p>
-<p>同上，不过多了附加条件</p>
+</li>
+<li><p>为什么<code>BIOS</code>只加载了一个扇区，后续扇区却是由<code>bootsect</code>代码加载？为什么<code>BIOS</code>没有直接把所有需要加载的扇区都加载？</p>
+<blockquote>
+<p>BIOS接到启动操作系统命令后，只从启动扇区将代码加载至0x07C00，而后续扇区由bootsect代码加载，这些代码由编写系统的用户负责，与之前BIOS无关。<br>这样的好处是 进行统一设计和统一安排，简单有效<br>BIOS不需要知道内核镜像大小、软盘分布等信息，OS设计者可以自己规划内存，更加灵活</p>
 </blockquote>
-<h2 id="5-递归"><a href="#5-递归" class="headerlink" title="5.递归"></a>5.递归</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/k-th-symbol-in-grammar/description/">779.第K个语法符号</a>  难度分：1571</p>
-<p>用到了异或反转</p>
+</li>
+<li><p>为什么<code>BIOS</code>把<code>bootsect</code>加载到<code>0x07c00</code>，而不是<code>0x00000</code>？加载后又马上挪到<code>0x90000</code>处，是何道理？为什么不一次加载到位？</p>
+<blockquote>
+<p>加载0x07C00是BIOS提前约定设置的，不能加载到0x00000是因为从0x00000开始到0x003FF这1KB内存空间都是BIOS首先约定进行加载中断向量表的地方，不能进行覆盖<br>而后挪到0x90000处是操作系统开始根据自己的需要安排内存了<br>一开始与BIOS约定不得已只能加载到0x07C00，所以加载后先把自己移动到后面</p>
 </blockquote>
+</li>
+<li><p><code>bootsect、setup、head</code>程序之间是怎么衔接的？给出代码证据。</p>
+<blockquote>
+<p>bootsect跳转到setup程序：jmpi 0,SETUPSEG;<br>在实模式下，CS:IP指向setup程序的第一条指令，此时setup开始执行</p>
+<p>setup跳转到head程序：jmpi 0,8<br>执行setup后，内核被移到了0x00000处，CPU变为保护模式，执行jmpi 0,8</p>
+</blockquote>
+</li>
+<li><p><code>setup</code>程序的最后是<code>jmpi 0,8 </code>，为什么这个<code>8</code>不能简单的当作阿拉伯数字8看待，究竟有什么内涵？</p>
+<blockquote>
+<p>此时为32位保护模式，“0”表示段内偏移，“8”表示段选择符。转化为二进制：1000。<br>8是段选择符，不能当数字8<br>最后两位00表示内核特权级，第三位0表示 GDT 表<br>第四位1表示根据GDT中的第2项来确定代码段的段基址和段限长等信息</p>
+</blockquote>
+</li>
+<li><p>保护模式在“保护”什么？它的“保护”体现在哪里？特权级的目的和意义是什么？分页有“保护”作用吗？</p>
+<blockquote>
+<p>保护操作系统的安全，不受到恶意攻击。保护进程地址空间<br>“保护”体现在打开保护模式后，CPU 的寻址模式发生了变化<br>特权级机制目的是为了进行合理的管理资源，保护高特权级的段</p>
+<p>&#x3D;&#x3D;此处回答不完整&#x3D;&#x3D;</p>
+</blockquote>
+</li>
+<li><p>在<code>setup</code>程序里曾经设置过<code>GDT</code>，为什么在<code>head</code>程序中将其废弃，又重新设置了一个？为什么设置两次，而不是一次搞好？</p>
+<blockquote>
+<p>原来GDT所在的位置是设计代码时在setup.s里面设置的数据，将来这个setup模块所在的内存位置会在设计缓冲区时被覆盖，如果不改变位置，将来GDT的内容肯定也会被缓冲区覆盖掉，这样一来，将来整个内存中唯一安全的地方就是现在head.s所在的地方了</p>
+</blockquote>
+</li>
+<li><p>内核的线性地址空间是如何分页的？画出从<code>0x000000</code>开始的7个页（包括页目录表、页表所在页）的挂接关系图，就是页目录表的前四个页目录项、第一个个页表的前7个页表项指向什么位置？给出代码证据。</p>
+<blockquote>
+<p>head.s在setup_paging开始创建分页机制。将页目录表和4个页表放到物理内存的起始位置，从内存起始位置开始的5个页空间内容全部清零（每页4KB），然后设置页目录表的前4项，使之分别指向4个页表<br>然后开始从高地址向低地址方向填写4个页表，依次指向内存从高地址向低地址方向的各个页面</p>
+<p>代码和图 P38 39</p>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102240331.png" srcset="/img/loading.gif" lazyload alt="image-20231210223649093"></p>
+</blockquote>
+</li>
+<li><p>根据内核分页为线性地址恒等映射的要求，推导出四个页表的映射公式，写出页表的设置代码。</p>
+<blockquote>
+<p>对于第一个页表（起始地址为0x00000000）：Page Table 1 Entry&#x3D;Linear Address</p>
+<p>对于第二个页表（起始地址为0x00400000）：Page Table 2 Entry&#x3D;Linear Address−0x00400000</p>
+<p>对于第三个页表（起始地址为0x00800000）：Page Table 3 Entry&#x3D;Linear Address−0x00800000</p>
+<p>对于第四个页表（起始地址为0x00C00000）：Page Table 4 Entry&#x3D;Linear Address−0x00C00000</p>
+<p>[GPT生成]</p>
+</blockquote>
+</li>
+<li><p>为什么不用<code>call</code>，而是用<code>ret</code>“调用”<code>main</code>函数？画出调用路线图，给出代码证据。</p>
+<blockquote>
+<p>由head程序向main函数跳转时，不需main函数返回，且因为main函数是最底层的函数，无更底层的函数进行返回。因此要达到既调用 main又不需返回，选择ret<br>P42 1-46图<br>after_page_tables:<br>    push 0			<br>    push 0			<br>    push 0<br>    push L6			<br>    push _main_rename		<br>    jmp setup_paging<br>L6:<br>    jmp L6	</p>
+<p>​	</p>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312102239444.png" srcset="/img/loading.gif" lazyload alt="image-20231210223449345"></p>
+</blockquote>
+</li>
+</ol>
 
                 
               </div>
@@ -410,7 +423,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  <a href="/categories/HomeWork/" class="category-chain-item">HomeWork</a>
   
   
 
@@ -425,7 +438,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
+        <a href="/tags/HomeWork/" class="print-no-link">#HomeWork</a>
       
     </div>
   
@@ -437,8 +450,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>《力扣面试150题》题单拓展——位运算</div>
-      <div>https://cylin.cn/posts/14b35ba0.html</div>
+      <div>OS思考题1.0</div>
+      <div>https://cylin.cn/posts/b6ce5e27.html</div>
     </div>
     <div class="license-meta">
       
@@ -482,18 +495,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/b6ce5e27.html" title="OS思考题1.0">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">OS思考题1.0</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/87778557.html" title="《力扣面试150题》题单拓展——双指针">
-                        <span class="hidden-mobile">《力扣面试150题》题单拓展——双指针</span>
+                      <a href="/posts/14b35ba0.html" title="《力扣面试150题》题单拓展——位运算">
+                        <span class="hidden-mobile">《力扣面试150题》题单拓展——位运算</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
