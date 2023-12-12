@@ -182,6 +182,13 @@
 
   
   <url>
+    <loc>https://cylin.cn/tags/Hexo/</loc>
+    <lastmod>2023-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://cylin.cn/tags/LeetCode/</loc>
     <lastmod>2023-12-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -197,13 +204,6 @@
   
   <url>
     <loc>https://cylin.cn/tags/Java/</loc>
-    <lastmod>2023-12-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://cylin.cn/tags/Hexo/</loc>
     <lastmod>2023-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -261,6 +261,13 @@
 
   
   <url>
+    <loc>https://cylin.cn/categories/Hexo/</loc>
+    <lastmod>2023-12-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://cylin.cn/categories/LeetCode/</loc>
     <lastmod>2023-12-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -269,13 +276,6 @@
   
   <url>
     <loc>https://cylin.cn/categories/Java/</loc>
-    <lastmod>2023-12-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://cylin.cn/categories/Hexo/</loc>
     <lastmod>2023-12-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
