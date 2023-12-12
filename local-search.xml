@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>已解决-Hexo Fluid主题本地搜索无法正常使用bug复现</title>
+    <link href="/posts/aca58bcd.html"/>
+    <url>/posts/aca58bcd.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="已解决-Hexo-Fluid主题本地搜索无法正常使用bug复现"><a href="#已解决-Hexo-Fluid主题本地搜索无法正常使用bug复现" class="headerlink" title="[已解决]Hexo Fluid主题本地搜索无法正常使用bug复现"></a>[已解决]Hexo Fluid主题本地搜索无法正常使用bug复现</h1><blockquote><p>很好，通过发布这篇文章，我有发现了，yaml语法里面不能有<code>[]</code>，要不然hexo g的时候会报错，哈哈哈哈哈哈哈哈哈，好你的</p></blockquote><h2 id="一、本地搜索无法使用"><a href="#一、本地搜索无法使用" class="headerlink" title="一、本地搜索无法使用"></a>一、本地搜索无法使用</h2><p>如图，一直在转圈圈</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121409748.png" alt="image-20231212140912128"></p><h3 id="1-1-F12查看"><a href="#1-1-F12查看" class="headerlink" title="1.1 F12查看"></a>1.1 F12查看</h3><p><strong>发现状态为200，那么恭喜你，参考下文即可顺利解决问题</strong></p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121410703.png" alt="image-20231212141000256"></p><h3 id="1-2-访问search-xml"><a href="#1-2-访问search-xml" class="headerlink" title="1.2 访问search.xml"></a>1.2 访问search.xml</h3><p>显示这里，说明文章里面有些字符，无法识别</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121410237.png" alt="image-20231212141045168"></p><h3 id="1-3-找到问题文章"><a href="#1-3-找到问题文章" class="headerlink" title="1.3 找到问题文章"></a>1.3 找到问题文章</h3><p>网页拉倒最下面，确定文章关键字，如果文章数量太多，无法人为找到，本地打开search.xml文件</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121412383.png" alt="image-20231212141205290"></p><p>本地搜索后，可以确定问题文章</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121413461.png" alt="image-20231212141330341"></p><h3 id="1-4-解决字符问题"><a href="#1-4-解决字符问题" class="headerlink" title="1.4 解决字符问题"></a>1.4 解决字符问题</h3><p>根据文件检索，定位。最终确定问题出现在这里</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121414635.png" alt="image-20231212141423496"></p><hr><p>放入代码块范围</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121415703.png" alt="image-20231212141509628"></p><h3 id="1-5-大功告成"><a href="#1-5-大功告成" class="headerlink" title="1.5 大功告成"></a>1.5 大功告成</h3><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121415324.png" alt="image-20231212141533804"></p><h3 id="1-6-重新部署发布即可"><a href="#1-6-重新部署发布即可" class="headerlink" title="1.6 重新部署发布即可"></a>1.6 重新部署发布即可</h3><p>在网页端，也能正常检索了</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121418506.png" alt="image-20231212141811745"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>记LeetCode每日一题-单调栈Plus+复习单调栈-C++</title>
     <link href="/posts/ca1fbac4.html"/>
     <url>/posts/ca1fbac4.html</url>
