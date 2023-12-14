@@ -20,8 +20,8 @@
   
     <meta name="description" content="cylin的个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://cylin.cn/archives/2023/12/page/2/index.html">
+<meta property="og:title" content="CYLIN‘S BLOG">
+<meta property="og:url" content="https://cylin.cn/page/3/index.html">
 <meta property="og:site_name" content="CYLIN‘S BLOG">
 <meta property="og:description" content="cylin的个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -30,7 +30,7 @@
   
   
   
-  <title>归档 - CYLIN‘S BLOG</title>
+  <title>CYLIN‘S BLOG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -114,7 +114,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 100vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -226,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="归档"></span>
+            <span id="subtitle" data-typed-text="多读书多看报，少吃零食多睡觉"></span>
           
         </div>
 
@@ -234,8 +234,142 @@
       </div>
 
       
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
 	
+	
+		<div style="height:500px" id="bubbles"></div>
+		<script>
+			circleMagic();
+			function circleMagic(options) {
+				let width;
+				let height;
+				let canvas;
+				let ctx;
+				let animateHeader = true;
+				const circles = [];
+
+				const settings = options || {
+					color: 'rgba(255,255,255,.3)',
+					radius: 10,
+					density: 0.1,
+					clearOffset: 0.7
+				}
+
+				const container = document.getElementById('bubbles');
+				initContainer();
+				addListeners();
+
+				function initContainer() {
+					width = container.offsetWidth;
+					height = container.offsetHeight - 120;
+
+					initCanvas();
+					canvas = document.getElementById('homeTopCanvas');
+					canvas.width = width;
+					canvas.height = height;
+					canvas.style.position = 'absolute';
+					canvas.style.left = '0';
+					canvas.style.bottom = '0';
+					ctx = canvas.getContext('2d');
+
+					for (let x = 0; x < width * settings.density; x++) {
+						const c = new Circle();
+						circles.push(c);
+					}
+					animate();
+				}
+
+				function initCanvas() {
+					const canvasElement = document.createElement('canvas');
+					canvasElement.id = 'homeTopCanvas';
+					canvasElement.style.pointerEvents = 'none';
+					container.appendChild(canvasElement);
+					canvasElement.parentElement.style.overflow = 'hidden';
+				}
+
+				function addListeners() {
+					window.addEventListener('scroll', scrollCheck, false);
+					window.addEventListener('resize', resize, false);
+				}
+
+				function scrollCheck() {
+					if (document.body.scrollTop > height) {
+						animateHeader = false;
+					} else {
+						animateHeader = true;
+					}
+				}
+
+				function resize() {
+					width = container.clientWidth;
+					height = container.clientHeight;
+					container.height = height + 'px';
+					canvas.width = width;
+					canvas.height = height;
+				}
+
+				function animate() {
+					if (animateHeader) {
+						ctx.clearRect(0, 0, width, height);
+						for (const i in circles) {
+							circles[i].draw();
+						}
+					}
+					requestAnimationFrame(animate);
+				}
+
+				function randomColor() {
+					const r = Math.floor(Math.random() * 255);
+					const g = Math.floor(Math.random() * 255);
+					const b = Math.floor(Math.random() * 255);
+					const alpha = Math.random().toPrecision(2);
+					return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+				}
+
+				function Circle() {
+					const that = this;
+					(function () {
+						that.pos = {};
+						init();
+					})();
+					function init() {
+						that.pos.x = Math.random() * width;
+						that.pos.y = height + Math.random() * 100;
+						that.alpha = 0.1 + Math.random() * settings.clearOffset;
+						that.scale = 0.1 + Math.random() * 0.3;
+						that.speed = Math.random();
+						if (settings.color === 'random') {
+							that.color = randomColor();
+						} else {
+							that.color = settings.color;
+						}
+					}
+					this.draw = function () {
+						if (that.alpha <= 0) {
+							init();
+						}
+						that.pos.y -= that.speed;
+						that.alpha -= 0.0005;
+						ctx.beginPath();
+						ctx.arc(
+							that.pos.x,
+							that.pos.y,
+							that.scale * settings.radius,
+							0,
+							2 * Math.PI,
+							false
+						);
+						ctx.fillStyle = that.color;
+						ctx.fill();
+						ctx.closePath();
+					}
+				}
+			}
+		</script>
 	
 	
 	
@@ -251,90 +385,60 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          >
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 21 篇文章</p>
-  <hr>
-  
-  
+
+  <div class="row mx-auto index-card">
     
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/4a17b156.html" target="_self">
+          <img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312090904247.png" srcset="/img/loading.gif" lazyload alt="Hello World">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/posts/4a17b156.html" target="_self">
+          Hello World
+        </a>
+      </h2>
+
       
-      <p class="h5">2023</p>
-    
-    <a href="/posts/6ebace6f.html" class="list-group-item list-group-item-action">
-      <time>12-10</time>
-      <div class="list-group-item-title">《力扣面试150题》题单拓展——回溯</div>
-    </a>
-  
-    
-    <a href="/posts/1a814453.html" class="list-group-item list-group-item-action">
-      <time>12-10</time>
-      <div class="list-group-item-title">《力扣面试150题》题单拓展——滑动窗口</div>
-    </a>
-  
-    
-    <a href="/posts/724c4101.html" class="list-group-item list-group-item-action">
-      <time>12-10</time>
-      <div class="list-group-item-title">《力扣面试150题》题单拓展——二分法</div>
-    </a>
-  
-    
-    <a href="/posts/928602d2.html" class="list-group-item list-group-item-action">
-      <time>12-09</time>
-      <div class="list-group-item-title">MyBatis-CRUD案例</div>
-    </a>
-  
-    
-    <a href="/posts/4a501248.html" class="list-group-item list-group-item-action">
-      <time>12-08</time>
-      <div class="list-group-item-title">Maven and MyBatis</div>
-    </a>
-  
-    
-    <a href="/posts/26adabd4.html" class="list-group-item list-group-item-action">
-      <time>12-08</time>
-      <div class="list-group-item-title">JDBC MySQL8.0连接及API</div>
-    </a>
-  
-    
-    <a href="/posts/b8b0eacd.html" class="list-group-item list-group-item-action">
-      <time>12-07</time>
-      <div class="list-group-item-title">Java基础</div>
-    </a>
-  
-    
-    <a href="/posts/ad0e17cd.html" class="list-group-item list-group-item-action">
-      <time>12-07</time>
-      <div class="list-group-item-title">Hexo搜索引擎收录</div>
-    </a>
-  
-    
-    <a href="/posts/c24675b4.html" class="list-group-item list-group-item-action">
-      <time>12-05</time>
-      <div class="list-group-item-title">MySQL</div>
-    </a>
-  
-    
-    <a href="/posts/7a6a6b5a.html" class="list-group-item list-group-item-action">
-      <time>12-05</time>
-      <div class="list-group-item-title">测试文章</div>
-    </a>
-  
-</div>
+      <a class="index-excerpt " href="/posts/4a17b156.html" target="_self">
+        <div>
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-12-05 18:28" pubdate>
+              2023-12-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/archives/2023/12/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/archives/2023/12/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2023/12/page/3/#board">3</a><a class="extend next" rel="next" href="/archives/2023/12/page/3/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><span class="page-number current">3</span>
     </span>
   </nav>
-
 
 
 
