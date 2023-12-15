@@ -18,24 +18,24 @@
   <meta name="author" content="cylin">
   <meta name="keywords" content="">
   
-    <meta name="description" content="记LeetCode每日一题二维前缀和+复习-C++">
+    <meta name="description" content="由bug引题，学习了Junit和Junit.Jupiter.api区别">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记LeetCode每日一题二维前缀和+复习-C++">
-<meta property="og:url" content="https://cylin.cn/posts/351f1e5.html">
+<meta property="og:title" content="bug引题-学习Junit和Junit.Jupiter.api区别">
+<meta property="og:url" content="https://cylin.cn/posts/7a8f8395.html">
 <meta property="og:site_name" content="CYLIN‘S BLOG">
-<meta property="og:description" content="记LeetCode每日一题二维前缀和+复习-C++">
+<meta property="og:description" content="由bug引题，学习了Junit和Junit.Jupiter.api区别">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312140929054.png">
-<meta property="article:published_time" content="2023-12-14T01:27:36.000Z">
-<meta property="article:modified_time" content="2023-12-14T01:35:20.534Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312152257269.png">
+<meta property="article:published_time" content="2023-12-15T14:42:14.000Z">
+<meta property="article:modified_time" content="2023-12-15T14:57:50.740Z">
 <meta property="article:author" content="cylin">
-<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Learn">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312140929054.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312152257269.png">
   
   
   
-  <title>记LeetCode每日一题二维前缀和+复习-C++ - CYLIN‘S BLOG</title>
+  <title>bug引题-学习Junit和Junit.Jupiter.api区别 - CYLIN‘S BLOG</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -237,7 +237,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="记LeetCode每日一题二维前缀和+复习-C++"></span>
+            <span id="subtitle" data-typed-text="bug引题-学习Junit和Junit.Jupiter.api区别"></span>
           
         </div>
 
@@ -248,8 +248,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-14 09:27" pubdate>
-          2023年12月14日 上午
+        <time datetime="2023-12-15 22:42" pubdate>
+          2023年12月15日 晚上
         </time>
       </span>
     
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          1.2k 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          13 分钟
+          10 分钟
         
       </span>
     
@@ -334,33 +334,40 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">记LeetCode每日一题二维前缀和+复习-C++</h1>
+            <h1 id="seo-header">bug引题-学习Junit和Junit.Jupiter.api区别</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="2132-用邮票贴满网格图"><a href="#2132-用邮票贴满网格图" class="headerlink" title="2132.用邮票贴满网格图"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/stamping-the-grid/description/">2132.用邮票贴满网格图</a></h1><blockquote>
-<p>给你一个 <code>m x n</code> 的二进制矩阵 <code>grid</code> ，每个格子要么为 <code>0</code> （空）要么为 <code>1</code> （被占据）。</p>
-<p>给你邮票的尺寸为 <code>stampHeight x stampWidth</code> 。我们想将邮票贴进二进制矩阵中，且满足以下 <strong>限制</strong> 和 <strong>要求</strong> ：</p>
-<ol>
-<li>覆盖所有 <strong>空</strong> 格子。</li>
-<li>不覆盖任何 <strong>被占据</strong> 的格子。</li>
-<li>我们可以放入任意数目的邮票。</li>
-<li>邮票可以相互有 <strong>重叠</strong> 部分。</li>
-<li>邮票不允许 <strong>旋转</strong> 。</li>
-<li>邮票必须完全在矩阵 <strong>内</strong> 。</li>
+                <h1 id="Junit和Junit-Jupiter-api用法区别"><a href="#Junit和Junit-Jupiter-api用法区别" class="headerlink" title="Junit和Junit.Jupiter.api用法区别"></a>Junit和Junit.Jupiter.api用法区别</h1><blockquote>
+<p>Junit 5 &#x3D; Junit Platform + Junit Jupiter + Junit Vintage</p>
+<p>Junit4中的@Test是import org.junit.Test;<br>Jupiter中的@Test是import org.junit.jupiter.api.Test;</p>
+</blockquote>
+<h2 id="1-bug引题"><a href="#1-bug引题" class="headerlink" title="1. bug引题"></a>1. bug引题</h2><ol>
+<li><p>今天在学习Spring的时候，整合Spring5-text5测试环境的时候</p>
+<p>@Autowired 一直提示是空指针，搞得我很困惑，@Component没有问题，配置类也没有问题</p>
+</li>
 </ol>
-<p>如果在满足上述要求的前提下，可以放入邮票，请返回 <code>true</code> ，否则返回 <code>false</code> 。</p>
-</blockquote>
-<blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312140930703.png" srcset="/img/loading.gif" lazyload alt="image-20231214093039564"></p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：grid = <span class="hljs-comment">[<span class="hljs-comment">[1,0,0,0]</span>,<span class="hljs-comment">[1,0,0,0]</span>,<span class="hljs-comment">[1,0,0,0]</span>,<span class="hljs-comment">[1,0,0,0]</span>,<span class="hljs-comment">[1,0,0,0]</span>]</span>, stampHeight = 4, stampWidth = 3<br>输出：true<br>解释：我们放入两个有重叠部分的邮票（图中标号为 1 和 2），它们能覆盖所有与空格子。<br></code></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="解题记录"><a href="#解题记录" class="headerlink" title="解题记录"></a>解题记录</h2><p>先复习一下一维差分和二维差分</p>
-<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312140932902.png" srcset="/img/loading.gif" lazyload alt="image-20231214093159674"></p>
-<p>以及二维前缀和</p>
-<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312140933429.png" srcset="/img/loading.gif" lazyload alt="image-20231214093321470"></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">possibleToStamp</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; grid, <span class="hljs-type">int</span> stampHeight, <span class="hljs-type">int</span> stampWidth)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = grid.<span class="hljs-built_in">size</span>(), m = grid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">sum</span>(n+<span class="hljs-number">5</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(m+<span class="hljs-number">5</span>, <span class="hljs-number">0</span>));   <span class="hljs-comment">//多加，避免讨论</span><br>        <span class="hljs-comment">//开始计算二维前缀和</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;n; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>; j&lt;m; j++)&#123;<br>                sum[i+<span class="hljs-number">1</span>][j+<span class="hljs-number">1</span>] = grid[i][j];<br>                sum[i+<span class="hljs-number">1</span>][j+<span class="hljs-number">1</span>] += sum[i][j+<span class="hljs-number">1</span>]+sum[i+<span class="hljs-number">1</span>][j]-sum[i][j];<br>            &#125;<br>        &#125;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">result</span>(n+<span class="hljs-number">5</span>, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(m+<span class="hljs-number">5</span>, <span class="hljs-number">0</span>));  <span class="hljs-comment">//差分数组</span><br>        <span class="hljs-comment">//开始枚举左上起点</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=m; j++)&#123;<br>                <span class="hljs-comment">//(i, j) </span><br>                <span class="hljs-comment">//       (x, y)</span><br>                <span class="hljs-type">int</span> x = i+stampHeight<span class="hljs-number">-1</span>;<br>                <span class="hljs-type">int</span> y = j+stampWidth<span class="hljs-number">-1</span>;<br>                <span class="hljs-comment">//int count = sum[x][y]-sum[i-1][y]-sum[x][j-1]+sum[i-1][j-1]; 放在外面会超过合法下标</span><br>                <span class="hljs-keyword">if</span>(x&lt;= n &amp;&amp; y&lt;= m)&#123;<br>                    <span class="hljs-type">int</span> count = sum[x][y]-sum[i<span class="hljs-number">-1</span>][y]-sum[x][j<span class="hljs-number">-1</span>]+sum[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>];<br>                    <span class="hljs-keyword">if</span>(count == <span class="hljs-number">0</span>)&#123;<br>                        <span class="hljs-comment">//开始二维差分</span><br>                        result[i][j] += <span class="hljs-number">1</span>;<br>                        result[x+<span class="hljs-number">1</span>][y+<span class="hljs-number">1</span>] += <span class="hljs-number">1</span>;<br>                        result[i][y+<span class="hljs-number">1</span>] -= <span class="hljs-number">1</span>;<br>                        result[x+<span class="hljs-number">1</span>][j] -= <span class="hljs-number">1</span>;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//计算差分前缀和</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=m; j++)&#123;<br>                result[i][j] += result[i<span class="hljs-number">-1</span>][j]+result[i][j<span class="hljs-number">-1</span>]-result[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>];<br>                <span class="hljs-keyword">if</span>(grid[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] == <span class="hljs-number">0</span> &amp;&amp; result[i][j] == <span class="hljs-number">0</span>)    <span class="hljs-comment">//原地检验</span><br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SpringJUnitConfig(value = &#123;testProtoxy.class&#125;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">testioc</span> &#123;<br>    <br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">public</span> Calculator calculator;      <span class="hljs-comment">//有接口用接口取</span><br><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testioc01</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">add</span> <span class="hljs-operator">=</span> calculator.add(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>        System.out.println(<span class="hljs-string">&quot;add = &quot;</span> + add);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>后来百度之后，发现在测试函数上面加一句即可正常运行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@RunWith(<span class="hljs-params">SpringJUnit4ClassRunner.<span class="hljs-keyword">class</span></span>)</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>当然还没有学习到太深，只是靠字面理解这不就是跑在junit4的环境下面吗，那我的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.junit.jupiter<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit-jupiter-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.3.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>岂不是白白声明到5了</p>
+</li>
+<li><p>我就想起去百度这两个有什么区别的时候，遂产生了此篇记录博客</p>
+</li>
+</ol>
+<h2 id="2-学习区别"><a href="#2-学习区别" class="headerlink" title="2. 学习区别"></a>2. 学习区别</h2><p>Junit 5 &#x3D; Junit Platform + Junit Jupiter + Junit Vintage</p>
+<p>Junit4中的@Test是import org.junit.Test;<br>Jupiter中的@Test是import org.junit.jupiter.api.Test;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312152251520.png" srcset="/img/loading.gif" lazyload alt="image-20231215225144324"></p>
+<p>在测试类中@Test导入了****Junit.Jupiter.api****的Class文件后，我们就不需要再加上@RunWith注解了</p>
+<p>否则在junit4下，需要如下配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@SpringJUnitConfig(value = &#123;testProtoxy.class, javaProtoxy.class&#125;)</span><br></code></pre></td></tr></table></figure>
 
 
                 
@@ -380,8 +387,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/Java/Spring/" class="category-chain-item">Spring</a>
+  
+  
+
   
 
       </span>
@@ -395,7 +409,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
+        <a href="/tags/Learn/" class="print-no-link">#Learn</a>
       
     </div>
   
@@ -407,8 +421,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>记LeetCode每日一题二维前缀和+复习-C++</div>
-      <div>https://cylin.cn/posts/351f1e5.html</div>
+      <div>bug引题-学习Junit和Junit.Jupiter.api区别</div>
+      <div>https://cylin.cn/posts/7a8f8395.html</div>
     </div>
     <div class="license-meta">
       
@@ -420,7 +434,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月14日</div>
+          <div>2023年12月15日</div>
         </div>
       
       
@@ -452,18 +466,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/7a8f8395.html" title="bug引题-学习Junit和Junit.Jupiter.api区别">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">bug引题-学习Junit和Junit.Jupiter.api区别</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/ad1e65b2.html" title="Maven入门和进阶">
-                        <span class="hidden-mobile">Maven入门和进阶</span>
+                      <a href="/posts/351f1e5.html" title="记LeetCode每日一题二维前缀和+复习-C++">
+                        <span class="hidden-mobile">记LeetCode每日一题二维前缀和+复习-C++</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

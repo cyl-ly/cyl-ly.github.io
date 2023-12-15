@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>bug引题-学习Junit和Junit.Jupiter.api区别</title>
+    <link href="/posts/7a8f8395.html"/>
+    <url>/posts/7a8f8395.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="Junit和Junit-Jupiter-api用法区别"><a href="#Junit和Junit-Jupiter-api用法区别" class="headerlink" title="Junit和Junit.Jupiter.api用法区别"></a>Junit和Junit.Jupiter.api用法区别</h1><blockquote><p>Junit 5 &#x3D; Junit Platform + Junit Jupiter + Junit Vintage</p><p>Junit4中的@Test是import org.junit.Test;<br>Jupiter中的@Test是import org.junit.jupiter.api.Test;</p></blockquote><h2 id="1-bug引题"><a href="#1-bug引题" class="headerlink" title="1. bug引题"></a>1. bug引题</h2><ol><li><p>今天在学习Spring的时候，整合Spring5-text5测试环境的时候</p><p>@Autowired 一直提示是空指针，搞得我很困惑，@Component没有问题，配置类也没有问题</p></li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@SpringJUnitConfig(value = &#123;testProtoxy.class&#125;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">testioc</span> &#123;<br>    <br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">public</span> Calculator calculator;      <span class="hljs-comment">//有接口用接口取</span><br><br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testioc01</span><span class="hljs-params">()</span>&#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">add</span> <span class="hljs-operator">=</span> calculator.add(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);<br>        System.out.println(<span class="hljs-string">&quot;add = &quot;</span> + add);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><ol start="2"><li><p>后来百度之后，发现在测试函数上面加一句即可正常运行</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-meta">@RunWith(<span class="hljs-params">SpringJUnit4ClassRunner.<span class="hljs-keyword">class</span></span>)</span><br></code></pre></td></tr></table></figure></li><li><p>当然还没有学习到太深，只是靠字面理解这不就是跑在junit4的环境下面吗，那我的依赖</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.junit.jupiter<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit-jupiter-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.3.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure><p>岂不是白白声明到5了</p></li><li><p>我就想起去百度这两个有什么区别的时候，遂产生了此篇记录博客</p></li></ol><h2 id="2-学习区别"><a href="#2-学习区别" class="headerlink" title="2. 学习区别"></a>2. 学习区别</h2><p>Junit 5 &#x3D; Junit Platform + Junit Jupiter + Junit Vintage</p><p>Junit4中的@Test是import org.junit.Test;<br>Jupiter中的@Test是import org.junit.jupiter.api.Test;</p><p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312152251520.png" alt="image-20231215225144324"></p><p>在测试类中@Test导入了****Junit.Jupiter.api****的Class文件后，我们就不需要再加上@RunWith注解了</p><p>否则在junit4下，需要如下配置</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RunWith(SpringJUnit4ClassRunner.class)</span><br><span class="hljs-meta">@SpringJUnitConfig(value = &#123;testProtoxy.class, javaProtoxy.class&#125;)</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Spring</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Learn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>记LeetCode每日一题二维前缀和+复习-C++</title>
     <link href="/posts/351f1e5.html"/>
     <url>/posts/351f1e5.html</url>
