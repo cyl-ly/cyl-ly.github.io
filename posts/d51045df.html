@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312181105703.png">
 <meta property="article:published_time" content="2023-12-18T02:30:07.000Z">
-<meta property="article:modified_time" content="2023-12-18T03:05:20.977Z">
+<meta property="article:modified_time" content="2023-12-19T01:27:18.082Z">
 <meta property="article:author" content="cylin">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          3.2k 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          17 分钟
+          27 分钟
         
       </span>
     
@@ -339,8 +339,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="LeetCode-每日一题二分法，理解再次深刻-C"><a href="#LeetCode-每日一题二分法，理解再次深刻-C" class="headerlink" title="LeetCode-每日一题二分法，理解再次深刻-C++"></a>LeetCode-每日一题二分法，理解再次深刻-C++</h1><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-peak-element/description/">162.寻找峰值</a></p>
-<blockquote>
+                <h1 id="LeetCode-每日一题二分法，理解再次深刻-C"><a href="#LeetCode-每日一题二分法，理解再次深刻-C" class="headerlink" title="LeetCode-每日一题二分法，理解再次深刻-C++"></a>LeetCode-每日一题二分法，理解再次深刻-C++</h1><h1 id="162-寻找峰值"><a href="#162-寻找峰值" class="headerlink" title="162.寻找峰值"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-peak-element/description/">162.寻找峰值</a></h1><blockquote>
 <p>峰值元素是指其值严格大于左右相邻值的元素。</p>
 <p>给你一个整数数组 <code>nums</code>，找到峰值元素并返回其索引。数组可能包含多个峰值，在这种情况下，返回 <strong>任何一个峰值</strong> 所在位置即可。</p>
 <p>你可以假设 <code>nums[-1] = nums[n] = -∞</code> 。</p>
@@ -349,7 +348,7 @@
 <blockquote>
 <figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：nums = [<span class="hljs-number">1,2,3,1</span>]<br>输出：<span class="hljs-number">2</span><br>解释：<span class="hljs-number">3</span> 是峰值元素，你的函数应该返回其索引 <span class="hljs-number">2</span>。<br></code></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="1-做法1-0"><a href="#1-做法1-0" class="headerlink" title="1. 做法1.0"></a>1. 做法1.0</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findPeakElement</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-comment">//虽然是二分查找，但是根据-无穷，来提前却确定返回的信息也会跟关键</span><br><br>        <span class="hljs-keyword">if</span>(nums.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>] &gt; nums[<span class="hljs-number">1</span>])<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>] &gt; nums[nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-2</span>])<br>            <span class="hljs-keyword">return</span> nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br><br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>, r = nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(l &lt;= r)&#123;<br>            <span class="hljs-type">int</span> m = l+((r-l)&gt;&gt;<span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">if</span>(nums[m] &lt; nums[m<span class="hljs-number">-1</span>])<br>                r = m;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[m] &lt; nums[m+<span class="hljs-number">1</span>])<br>                l = m;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[m] &gt; nums[m<span class="hljs-number">-1</span>] &amp;&amp; nums[m] &gt; nums[m+<span class="hljs-number">1</span>])<br>                <span class="hljs-keyword">return</span> m;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h2 id="1-1-做法1-0"><a href="#1-1-做法1-0" class="headerlink" title="1.1 做法1.0"></a>1.1 做法1.0</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findPeakElement</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-comment">//虽然是二分查找，但是根据-无穷，来提前却确定返回的信息也会跟关键</span><br><br>        <span class="hljs-keyword">if</span>(nums.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>] &gt; nums[<span class="hljs-number">1</span>])<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>] &gt; nums[nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-2</span>])<br>            <span class="hljs-keyword">return</span> nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br><br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>, r = nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span>(l &lt;= r)&#123;<br>            <span class="hljs-type">int</span> m = l+((r-l)&gt;&gt;<span class="hljs-number">1</span>);<br>            <span class="hljs-keyword">if</span>(nums[m] &lt; nums[m<span class="hljs-number">-1</span>])<br>                r = m;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[m] &lt; nums[m+<span class="hljs-number">1</span>])<br>                l = m;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(nums[m] &gt; nums[m<span class="hljs-number">-1</span>] &amp;&amp; nums[m] &gt; nums[m+<span class="hljs-number">1</span>])<br>                <span class="hljs-keyword">return</span> m;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
 <p><strong>想明白和常规二分法的区别:</strong></p>
 <p>常规二分法去寻找答案，当m不符合的时候，一定可以根据“单调性”去推断，答案在当前的左侧(or 右侧)，并且通过<code>ans = m;</code>不断记录着最新符合要求的答案，最后返回ans即可</p>
@@ -364,7 +363,7 @@
 
 <p>中间一定是存在最值的，所以判断答案在左边，就把r移动到m了，但是，为什么不是m-1呢，因为m-1可能是答案，而且我们return 判断中是把答案作为中间元素，和左右两边元素比较的，所以<strong>不能让边界碰到“潜在的答案”</strong></p>
 <p><strong>也可以说：是return 的形式决定了转移的类型</strong></p>
-<h2 id="2-做法2-0——三位一体"><a href="#2-做法2-0——三位一体" class="headerlink" title="2. 做法2.0——三位一体"></a>2. 做法2.0——三位一体</h2><p>上面提到</p>
+<h2 id="2-1-做法2-0——三位一体"><a href="#2-1-做法2-0——三位一体" class="headerlink" title="2.1 做法2.0——三位一体"></a>2.1 做法2.0——三位一体</h2><p>上面提到</p>
 <blockquote>
 <p><strong>也可以说：是return 的形式决定了转移的类型</strong></p>
 </blockquote>
@@ -380,9 +379,29 @@
 <p>那第一个条件，应该怎么写呢，我可以判断m和m+1， m和m-1呀</p>
 <p>此时，就从两个元素入手，<code>l=0 m=0 r=1</code>。所以根据这里，更符合答案的普适，选择<code>nums[m] &lt; nums[m+1]</code>。</p>
 <p>m一定不是答案了此时的m+1，可能是答案，那就把左边界放到答案上面，促进后面的三位一体</p>
-<h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h2><p>很棒，今天第三次来做这个题，还是有收获的，距离第一次做也正好两个月了</p>
+<h2 id="3-1-总结"><a href="#3-1-总结" class="headerlink" title="3.1 总结"></a>3.1 总结</h2><p>很棒，今天第三次来做这个题，还是有收获的，距离第一次做也正好两个月了</p>
 <p>1.0 是根据左神的思路来的，但是之前一直看到有2.0的出现，今天就好好分析了一波，真是<strong>横看成岭侧成峰啊</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312181058989.png" srcset="/img/loading.gif" lazyload alt="image-20231218105825819"></p>
+<h1 id="1901-寻找峰值II"><a href="#1901-寻找峰值II" class="headerlink" title="1901.寻找峰值II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-a-peak-element-ii/description/">1901.寻找峰值II</a></h1><blockquote>
+<p>很巧，今天又是二分，12.19</p>
+<p>而且也算是另一种形式的二分吧，也加进来了</p>
+</blockquote>
+<blockquote>
+<p>一个 2D 网格中的 <strong>峰值</strong> 是指那些 <strong>严格大于</strong> 其相邻格子(上、下、左、右)的元素。</p>
+<p>给你一个 <strong>从 0 开始编号</strong> 的 <code>m x n</code> 矩阵 <code>mat</code> ，其中任意两个相邻格子的值都 <strong>不相同</strong> 。找出 <strong>任意一个 峰值</strong> <code>mat[i][j]</code> 并 <strong>返回其位置</strong> <code>[i,j]</code> 。</p>
+<p>你可以假设整个矩阵周边环绕着一圈值为 <code>-1</code> 的格子。</p>
+<p>要求必须写出时间复杂度为 <code>O(m log(n))</code> 或 <code>O(n log(m))</code> 的算法</p>
+</blockquote>
+<blockquote>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: mat = <span class="hljs-comment">[<span class="hljs-comment">[1,4]</span>,<span class="hljs-comment">[3,2]</span>]</span><br>输出: <span class="hljs-comment">[0,1]</span><br>解释: 3 和 4 都是峰值，所以<span class="hljs-comment">[1,0]</span>和<span class="hljs-comment">[0,1]</span>都是可接受的答案。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入: mat = <span class="hljs-comment">[<span class="hljs-comment">[10,20,15]</span>,<span class="hljs-comment">[21,30,14]</span>,<span class="hljs-comment">[7,16,32]</span>]</span><br>输出: <span class="hljs-comment">[1,1]</span><br>解释: 30 和 32 都是峰值，所以<span class="hljs-comment">[1,1]</span>和<span class="hljs-comment">[2,2]</span>都是可接受的答案<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="2-1-三位一体"><a href="#2-1-三位一体" class="headerlink" title="2.1 三位一体"></a>2.1 三位一体</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//这是直接比较m行最大值和m+1行最大值，虽也能ac，但是证明感觉还是力不从心，没有比较[m][j] - [m][j+1]这种稳妥</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findMaxNum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span></span>&#123;<br>        <span class="hljs-keyword">return</span> *<span class="hljs-built_in">max_element</span>(nums.<span class="hljs-built_in">begin</span>(), nums.<span class="hljs-built_in">end</span>());<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findMaxIndex</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;v)</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">max_element</span>(v.<span class="hljs-built_in">begin</span>(),v.<span class="hljs-built_in">end</span>()) - v.<span class="hljs-built_in">begin</span>(); <br>    &#125;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">findPeakGrid</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; mat)</span> </span>&#123;<br>        <span class="hljs-comment">//灵神，以行号二分</span><br>        <span class="hljs-type">int</span> n = mat.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-keyword">if</span>(n == <span class="hljs-number">1</span>)<br>            <span class="hljs-keyword">return</span> &#123;<span class="hljs-number">0</span>, <span class="hljs-built_in">findMaxIndex</span>(mat[<span class="hljs-number">0</span>])&#125;;<br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>, r = n<span class="hljs-number">-1</span>;         <span class="hljs-comment">//采用三位一体</span><br>        <span class="hljs-keyword">while</span>(l &lt; r)&#123;<br>            <span class="hljs-type">int</span> m = l+((r-l)&gt;&gt;<span class="hljs-number">1</span>);<br>            <span class="hljs-type">int</span> maxnum = <span class="hljs-built_in">findMaxNum</span>(mat[m]);        <span class="hljs-comment">//m行的最大值</span><br>            <span class="hljs-keyword">if</span>(maxnum &lt; <span class="hljs-built_in">findMaxNum</span>(mat[m+<span class="hljs-number">1</span>]))&#123;<br>                l = m+<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span><br>                r = m;<br>        &#125;<br>        <span class="hljs-keyword">return</span>&#123;l, <span class="hljs-built_in">findMaxIndex</span>(mat[l])&#125;;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>把每行看做一个元素，就将二维的二分转为一维了</p>
+<p>那怎么把每行的看做一个呢——就找到每行最大的元素，如果<code>nums[m][j]</code>为m行最大元素，而他小于<code>nums[m+1][j]</code>，则根据性质，下面必然有答案，这里就和一维的一样了</p>
+<p>这是直接比较m行最大值和m+1行最大值，虽也能ac，但是证明感觉还是力不从心，没有比较<code>[m][j] - [m][j+1]</code>这种稳妥</p>
 
                 
               </div>
@@ -472,6 +491,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/posts/d992ff02.html" title="Java_基础_B站韩顺平">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java_基础_B站韩顺平</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
