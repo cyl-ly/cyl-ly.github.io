@@ -26,8 +26,8 @@
 <meta property="og:description" content="还不错的，单调栈Plus+复习单调栈-C++">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cyl-ly/picture/blogimage/202312121132507.webp">
-<meta property="article:published_time" content="2023-12-12T03:30:42.000Z">
-<meta property="article:modified_time" content="2023-12-12T05:07:07.402Z">
+<meta property="article:published_time" content="2023-12-12T03:30:20.000Z">
+<meta property="article:modified_time" content="2023-12-21T02:27:01.964Z">
 <meta property="article:author" content="cylin">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary_large_image">
@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          3.7k 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          16 分钟
+          32 分钟
         
       </span>
     
@@ -339,7 +339,13 @@
             
               <div class="markdown-body">
                 
-                <h1 id="2454-下一个更大的元素IV"><a href="#2454-下一个更大的元素IV" class="headerlink" title="2454.下一个更大的元素IV"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/next-greater-element-iv/description/">2454.下一个更大的元素IV</a></h1><blockquote>
+                <h1 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h1><blockquote>
+<ul>
+<li>求下个更大的元素  &#x2F; 下下个</li>
+<li>求单调的前缀和、后缀和</li>
+</ul>
+</blockquote>
+<h1 id="2454-下一个更大的元素IV"><a href="#2454-下一个更大的元素IV" class="headerlink" title="2454.下一个更大的元素IV"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/next-greater-element-iv/description/">2454.下一个更大的元素IV</a></h1><blockquote>
 <p>给你一个下标从 <strong>0</strong> 开始的非负整数数组 <code>nums</code> 。对于 <code>nums</code> 中每一个整数，你必须找到对应元素的 <strong>第二大</strong> 整数。</p>
 <p>如果 <code>nums[j]</code> 满足以下条件，那么我们称它为 <code>nums[i]</code> 的 <strong>第二大</strong> 整数：</p>
 <ul>
@@ -368,6 +374,30 @@
 <p>先确定第一个栈要出哪些元素，再去从下向上加入到第二个栈，即可满足单调性</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> stack[<span class="hljs-number">100001</span>];    <br>    <span class="hljs-type">int</span> cur = <span class="hljs-number">0</span>;        <br>    <span class="hljs-type">int</span> stack2[<span class="hljs-number">100001</span>];     <span class="hljs-comment">//第二次单调栈，都是存下标</span><br>    <span class="hljs-type">int</span> cur2 = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">secondGreaterElement</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;   <br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">ans</span><span class="hljs-params">(nums.size(), <span class="hljs-number">-1</span>)</span></span>;				<span class="hljs-comment">//初始为-1，这样就没了结算阶段</span><br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;nums.<span class="hljs-built_in">size</span>(); i++)&#123;<br>            <span class="hljs-keyword">while</span>(cur2 &gt; <span class="hljs-number">0</span> &amp;&amp; nums[stack2[cur2<span class="hljs-number">-1</span>]] &lt; nums[i])&#123;<br>                <span class="hljs-type">int</span> index2 = stack2[--cur2];<br>                ans[index2] = nums[i];<br>            &#125;<br>            <span class="hljs-type">int</span> index = cur<span class="hljs-number">-1</span>;<br>            <span class="hljs-keyword">while</span>(cur &gt; <span class="hljs-number">0</span> &amp;&amp; nums[stack[cur<span class="hljs-number">-1</span>]] &lt; nums[i])&#123;    <br>                <span class="hljs-comment">//关键在于，第一次栈是小元素，在上面，第二次入栈怎么也保证小元素在上面</span><br>                cur--;<br>            &#125;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=cur; k&lt;=index; k++)&#123;      <span class="hljs-comment">//这样从底向上移动到第二个栈，就可以保证了</span><br>                stack2[cur2++] = stack[k];<br>            &#125;<br>            stack[cur++] = i; <br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure></li>
 </ol>
+<h1 id="2866-美丽塔II"><a href="#2866-美丽塔II" class="headerlink" title="2866.美丽塔II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/beautiful-towers-ii/description/">2866.美丽塔II</a></h1><p>12.21每日一题</p>
+<blockquote>
+<p>给你一个长度为 <code>n</code> 下标从 <strong>0</strong> 开始的整数数组 <code>maxHeights</code> 。</p>
+<p>你的任务是在坐标轴上建 <code>n</code> 座塔。第 <code>i</code> 座塔的下标为 <code>i</code> ，高度为 <code>heights[i]</code> 。</p>
+<p>如果以下条件满足，我们称这些塔是 <strong>美丽</strong> 的：</p>
+<ol>
+<li><code>1 &lt;= heights[i] &lt;= maxHeights[i]</code></li>
+<li><code>heights</code> 是一个 <strong>山脉</strong> 数组。</li>
+</ol>
+<p>如果存在下标 <code>i</code> 满足以下条件，那么我们称数组 <code>heights</code> 是一个 <strong>山脉</strong> 数组：</p>
+<ul>
+<li>对于所有 <code>0 &lt; j &lt;= i</code> ，都有 <code>heights[j - 1] &lt;= heights[j]</code></li>
+<li>对于所有 <code>i &lt;= k &lt; n - 1</code> ，都有 <code>heights[k + 1] &lt;= heights[k]</code></li>
+</ul>
+<p>请你返回满足 <strong>美丽塔</strong> 要求的方案中，<strong>高度和的最大值</strong> 。</p>
+</blockquote>
+<blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus">输入：maxHeights = <span class="hljs-selector-attr">[5,3,4,1,1]</span><br>输出：<span class="hljs-number">13</span><br>解释：和最大的美丽塔方案为 heights = <span class="hljs-selector-attr">[5,3,3,1,1]</span> ，这是一个美丽塔方案，因为：<br>- <span class="hljs-number">1</span> &lt;= heights<span class="hljs-selector-attr">[i]</span> &lt;= maxHeights<span class="hljs-selector-attr">[i]</span>  <br>- heights 是个山脉数组，峰值在 <span class="hljs-selector-tag">i</span> = <span class="hljs-number">0</span> 处。<br><span class="hljs-number">13</span> 是所有美丽塔方案中的最大高度和。<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus">输入：maxHeights = <span class="hljs-selector-attr">[6,5,3,9,2,7]</span><br>输出：<span class="hljs-number">22</span><br>解释： 和最大的美丽塔方案为 heights = <span class="hljs-selector-attr">[3,3,3,9,2,2]</span> ，这是一个美丽塔方案，因为：<br>- <span class="hljs-number">1</span> &lt;= heights<span class="hljs-selector-attr">[i]</span> &lt;= maxHeights<span class="hljs-selector-attr">[i]</span><br>- heights 是个山脉数组，峰值在 <span class="hljs-selector-tag">i</span> = <span class="hljs-number">3</span> 处。<br><span class="hljs-number">22</span> 是所有美丽塔方案中的最大高度和。<br></code></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h2><p>用单调栈还能去求单调递增或者单调递减的前缀和</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">int</span> stack[<span class="hljs-number">100005</span>];  <span class="hljs-comment">//下标</span><br>    <span class="hljs-type">int</span> cur = <span class="hljs-number">0</span>;<br>    <span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">maximumSumOfHeights</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-comment">//左侧满足非递减，右侧满足非递增</span><br>        <span class="hljs-comment">//因此可用两次单调栈 O(n) 求出前缀和和后缀和</span><br><br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">long</span> <span class="hljs-type">long</span>&gt; <span class="hljs-title">af_sum</span><span class="hljs-params">(n+<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;   <span class="hljs-comment">//包含i的后缀和</span><br>        <span class="hljs-function">vector&lt;<span class="hljs-type">long</span> <span class="hljs-type">long</span>&gt; <span class="hljs-title">be_sum</span><span class="hljs-params">(n+<span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;   <span class="hljs-comment">//包含i的前缀和</span><br>        <span class="hljs-comment">//后缀和</span><br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=n<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--)&#123;<br>            <span class="hljs-keyword">while</span>(cur &gt; <span class="hljs-number">0</span> &amp;&amp; nums[stack[cur<span class="hljs-number">-1</span>]] &gt; nums[i])&#123;<br>                <span class="hljs-comment">//cur的大小就是栈里面的元素个数</span><br>                <span class="hljs-comment">//当前元素更小，一个一个清空栈，直到遇到比当前还小的</span><br>                cur--;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(cur == <span class="hljs-number">0</span>)&#123;       <span class="hljs-comment">//栈全被清空了，那么i~n-1 必然全是nums[i]</span><br>                sum = (<span class="hljs-type">long</span> <span class="hljs-type">long</span>)nums[i]*(n-i);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;               <span class="hljs-comment">//栈有剩余，i到 栈顶下标 都被清了， 所以后缀和从当前栈顶下标那里转移过来 + 清空个数*nums[i]</span><br>                sum = be_sum[stack[cur<span class="hljs-number">-1</span>]]+(<span class="hljs-type">long</span> <span class="hljs-type">long</span>)(stack[cur<span class="hljs-number">-1</span>]-i)*nums[i];<br>            &#125;<br>            be_sum[i] = sum;<br>            stack[cur++] = i;   <br>        &#125;<br><br>        <span class="hljs-comment">//前缀和</span><br>        sum = <span class="hljs-number">0</span>;    <span class="hljs-comment">//清空之前的记录</span><br>        cur = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> ans = <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;n; i++)&#123;<br>            <span class="hljs-comment">//cur的大小就是栈里面的元素个数</span><br>            <span class="hljs-keyword">while</span>(cur &gt; <span class="hljs-number">0</span> &amp;&amp; nums[stack[cur<span class="hljs-number">-1</span>]] &gt; nums[i])&#123;<br>                cur--;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(cur == <span class="hljs-number">0</span>)&#123;<br>                sum = (<span class="hljs-type">long</span> <span class="hljs-type">long</span>)nums[i]*(i+<span class="hljs-number">1</span>);<br>            &#125;<br>            <span class="hljs-keyword">else</span>&#123;<br>                sum = af_sum[stack[cur<span class="hljs-number">-1</span>]]+(<span class="hljs-type">long</span> <span class="hljs-type">long</span>)(i-stack[cur<span class="hljs-number">-1</span>])*nums[i];<br>            &#125;<br>            af_sum[i] = sum;<br>            stack[cur++] = i;<br>            ans = <span class="hljs-built_in">max</span>(ans, <span class="hljs-number">0ll</span>+af_sum[i]+be_sum[i]-nums[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br><br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
